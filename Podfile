@@ -9,5 +9,10 @@ target 'SocialSignIn' do
     pod 'GoogleSignIn'
     pod 'FBSDKCoreKit'
     pod 'FBSDKLoginKit'
+    pod 'TwitterKit'
     pod 'SnapKit'
+    pod 'LinkedinSwift'
+    pod 'SwiftInstagram'
+    pod 'InstagramLogin'
+    
 end

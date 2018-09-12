@@ -9,17 +9,28 @@
 import UIKit
 import GoogleSignIn
 import FBSDKCoreKit
+import TwitterKit
+import LinkedinSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        return GIDSignIn.sharedInstance().handle(url as URL?,
-                                            sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
-                                                 annotation: options[UIApplicationOpenURLOptionsKey.annotation])
-        let handled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
         
         
+        if FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String, annotation: options[UIApplicationOpenURLOptionsKey.annotation]) { return true }
+        
+        if GIDSignIn.sharedInstance().handle(url,sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,annotation: options[UIApplicationOpenURLOptionsKey.annotation]) { return true }
+        
+        // Linkedin sdk handle redirect
+        if LinkedinSwiftHelper.shouldHandle(url) {
+            return LinkedinSwiftHelper.application(app,
+                                                   open: url, sourceApplication: [UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+            
+        }
+        
+        
+        return false
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
@@ -54,7 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Override point for customization after application launch.
         
         //Initialize Sign-in
-        GIDSignIn.sharedInstance().clientID = "98981635536-a90sp67hv0q92pf5ep59472med2ue113.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().clientID = "98981635536-gtal5dgf6r3cm35ave1qt1q95o1gdj68.apps.googleusercontent.com"
         GIDSignIn.sharedInstance().delegate = self
         
         return true
@@ -84,6 +95,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
 
 }
-
-//Login By Facebook
-

@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		18181CAE212996AA0077DA69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18181CAD212996AA0077DA69 /* AppDelegate.swift */; };
-		18181CB0212996AA0077DA69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18181CAF212996AA0077DA69 /* ViewController.swift */; };
+		18181CB0212996AA0077DA69 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18181CAF212996AA0077DA69 /* SignInVC.swift */; };
 		18181CB3212996AA0077DA69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18181CB1212996AA0077DA69 /* Main.storyboard */; };
 		18181CB5212996AC0077DA69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18181CB4212996AC0077DA69 /* Assets.xcassets */; };
 		18181CB8212996AC0077DA69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18181CB6212996AC0077DA69 /* LaunchScreen.storyboard */; };
-		18181CC42129A7240077DA69 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18181CC32129A7240077DA69 /* credentials.plist */; };
+		18573C2A21490D0D00BB3436 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18573C2921490D0D00BB3436 /* Constants.swift */; };
+		1865A5D7213E83E50082E442 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1865A5D6213E83E50082E442 /* credentials.plist */; };
 		18A4FE2D213C1F610050BE49 /* SocialAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A4FE2C213C1F610050BE49 /* SocialAuthentication.swift */; };
 		E97214A24D35FA970775CC39 /* Pods_SocialSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92EF57A6409F25AA15AA9F37 /* Pods_SocialSignIn.framework */; };
 /* End PBXBuildFile section */
@@ -20,12 +21,13 @@
 /* Begin PBXFileReference section */
 		18181CAA212996AA0077DA69 /* SocialSignIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialSignIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18181CAD212996AA0077DA69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		18181CAF212996AA0077DA69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		18181CAF212996AA0077DA69 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		18181CB2212996AA0077DA69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18181CB4212996AC0077DA69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18181CB7212996AC0077DA69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18181CB9212996AC0077DA69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18181CC32129A7240077DA69 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
+		18573C2921490D0D00BB3436 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1865A5D6213E83E50082E442 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		18A4FE2C213C1F610050BE49 /* SocialAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAuthentication.swift; sourceTree = "<group>"; };
 		3D85E904A0C6324C613E98F5 /* Pods-SocialSignIn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialSignIn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialSignIn/Pods-SocialSignIn.debug.xcconfig"; sourceTree = "<group>"; };
 		92EF57A6409F25AA15AA9F37 /* Pods_SocialSignIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialSignIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,13 +76,14 @@
 			isa = PBXGroup;
 			children = (
 				18181CAD212996AA0077DA69 /* AppDelegate.swift */,
-				18181CAF212996AA0077DA69 /* ViewController.swift */,
+				18181CAF212996AA0077DA69 /* SignInVC.swift */,
 				18181CB1212996AA0077DA69 /* Main.storyboard */,
 				18181CB4212996AC0077DA69 /* Assets.xcassets */,
 				18181CB6212996AC0077DA69 /* LaunchScreen.storyboard */,
 				18181CB9212996AC0077DA69 /* Info.plist */,
-				18181CC32129A7240077DA69 /* credentials.plist */,
+				1865A5D6213E83E50082E442 /* credentials.plist */,
 				18A4FE2C213C1F610050BE49 /* SocialAuthentication.swift */,
+				18573C2921490D0D00BB3436 /* Constants.swift */,
 			);
 			path = SocialSignIn;
 			sourceTree = "<group>";
@@ -129,6 +132,7 @@
 				TargetAttributes = {
 					18181CA9212996AA0077DA69 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -156,7 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18181CB8212996AC0077DA69 /* LaunchScreen.storyboard in Resources */,
-				18181CC42129A7240077DA69 /* credentials.plist in Resources */,
+				1865A5D7213E83E50082E442 /* credentials.plist in Resources */,
 				18181CB5212996AC0077DA69 /* Assets.xcassets in Resources */,
 				18181CB3212996AA0077DA69 /* Main.storyboard in Resources */,
 			);
@@ -173,10 +177,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SocialSignIn/Pods-SocialSignIn-resources.sh",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -190,23 +196,37 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SocialSignIn/Pods-SocialSignIn-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IOSLinkedInAPIFix/IOSLinkedInAPIFix.framework",
+				"${BUILT_PRODUCTS_DIR}/InstagramLogin/InstagramLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/LinkedinSwift/LinkedinSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftInstagram/SwiftInstagram.framework",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IOSLinkedInAPIFix.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InstagramLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LinkedinSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftInstagram.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -238,9 +258,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18181CB0212996AA0077DA69 /* ViewController.swift in Sources */,
+				18181CB0212996AA0077DA69 /* SignInVC.swift in Sources */,
 				18A4FE2D213C1F610050BE49 /* SocialAuthentication.swift in Sources */,
 				18181CAE212996AA0077DA69 /* AppDelegate.swift in Sources */,
+				18573C2A21490D0D00BB3436 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,8 +406,14 @@
 			baseConfigurationReference = 3D85E904A0C6324C613E98F5 /* Pods-SocialSignIn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SocialSignIn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -394,6 +421,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Code95.SocialSignIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -404,8 +435,14 @@
 			baseConfigurationReference = FF82FE40B8A115FF1345B3AF /* Pods-SocialSignIn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SocialSignIn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -413,6 +450,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Code95.SocialSignIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
