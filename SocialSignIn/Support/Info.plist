@@ -4,10 +4,6 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
-	<key>InstagramClientId</key>
-	<string>d49bfebc351e41cd8f41a606ba9cedbc</string>
-	<key>InstagramRedirectURL</key>
-	<string>http://www.code95.com</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -23,12 +19,9 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.98981635536-gtal5dgf6r3cm35ave1qt1q95o1gdj68</string>
-				<string>fb233849517300262</string>
+				<string>twitterkit-q9e8fo6TPGEYWgkyTIX5BEXbX</string>
 			</array>
 		</dict>
 		<dict>
@@ -36,7 +29,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>li5241843</string>
+				<string>com.googleusercontent.apps.98981635536-gtal5dgf6r3cm35ave1qt1q95o1gdj68</string>
 			</array>
 		</dict>
 	</array>
@@ -46,17 +39,16 @@
 	<string>233849517300262</string>
 	<key>FacebookDisplayName</key>
 	<string>SocialSignIn</string>
+	<key>InstagramClientId</key>
+	<string>d49bfebc351e41cd8f41a606ba9cedbc</string>
+	<key>InstagramRedirectURL</key>
+	<string>http://www.code95.com</string>
 	<key>LIAppId</key>
 	<string>5241843</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
-		<string>fbapi</string>
-		<string>fb-messenger-share-api</string>
-		<string>fbauth2</string>
-		<string>fbshareextension</string>
-		<string>linkedin</string>
-		<string>linkedin-sdk2</string>
-		<string>linkedin-sdk</string>
+		<string>twitter</string>
+		<string>twitterauth</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>

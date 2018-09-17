@@ -8,45 +8,58 @@
 
 //MARK: - Import Frameworks
 import UIKit
+import SnapKit
+
 import GoogleSignIn
 import FBSDKLoginKit
-import SnapKit
 import LinkedinSwift
 import InstagramLogin
+import TwitterKit
 
 ///Sign In view controller
 class SignInVC: UIViewController{
     
     //MARK: Properties
     var instagramLogin: InstagramLoginViewController!
- 
-  
-    lazy var fbLoginBtn: FBSDKLoginButton = {
-        let fbBtn = FBSDKLoginButton()
-        return fbBtn
-    }()
     
-    lazy var googleLoginBtn: GIDSignInButton = {
-        return GIDSignInButton()
+    lazy var facebookLoginBtn: UIButton = {
+        var button = UIButton()
+        //button.backgroundColor = .gray
+        button.setImage(#imageLiteral(resourceName: "facebook"), for: .normal)
+        //button.imageView?.contentMode = .scaleToFill
+        return button
+    }()
+
+    lazy var googleLoginBtn: UIButton = {
+        let button = UIButton()
+        GIDSignIn.sharedInstance().uiDelegate = self
+        //button.backgroundColor = .gray
+        button.setImage(#imageLiteral(resourceName: "google"), for: .normal)
+        //button.imageView?.contentMode = .scaleAspectFit
+        return button
     }()
     
     lazy var linkedInLoginBtn: UIButton = {
         let button = UIButton()
-        button.titleLabel?.text = "Login with LinkedIn"
-        button.titleLabel?.textColor = UIColor.white
-        button.titleLabel?.font = UIFont(name: "San Francisco", size: 16)
-        button.backgroundColor = UIColor.blue
-        button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
+        //button.backgroundColor = .gray
+        button.setImage(#imageLiteral(resourceName: "linkedin"), for: .normal)
+        //button.imageView?.contentMode = .scaleAspectFill
         return button
     }()
     
     lazy var instagramLoginBtn: UIButton = {
         let button = UIButton()
-        button.titleLabel?.text = "Login with Instgram"
-        button.titleLabel?.textColor = UIColor.white
-        button.titleLabel?.font = UIFont(name: "San Francisco", size: 16)
-        button.backgroundColor = UIColor.purple
-        button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
+        //button.backgroundColor = .gray
+        button.setImage(#imageLiteral(resourceName: "instagram"), for: .normal)
+       // button.imageView?.contentMode = .scaleAspectFit
+        return button
+    }()
+    
+    lazy var twitterLoginBtn: UIButton = {
+        let button = UIButton()
+        //button.backgroundColor = .gray
+        button.setImage(#imageLiteral(resourceName: "twitter"), for: .normal)
+        //button.imageView?.contentMode = .scaleAspectFit
         return button
     }()
     
@@ -55,24 +68,24 @@ class SignInVC: UIViewController{
     lazy var stackView: UIStackView = {
         
         let s = UIStackView(frame: self.view.bounds)
-        s.axis = .vertical
+        //s.backgroundColor = UIColor.blue
+        s.axis = .horizontal
         s.distribution = .fillEqually
         s.alignment = .fill
-        s.spacing = 10
-        //s.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        s.addArrangedSubview(googleLoginBtn)
-        s.addArrangedSubview(fbLoginBtn)
-        s.addArrangedSubview(linkedInLoginBtn)
-        s.addArrangedSubview(instagramLoginBtn)
+        s.spacing = 10//20
+        s.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         return s
         
     }()
     
+    lazy var container: UIView = {
+        let v = UIView()
+        //v.backgroundColor = UIColor.black
+        return v
+    }()
   
     
-    
-    let linkedinHelper = LinkedinSwiftHelper(configuration: LinkedinSwiftConfiguration(clientId: "773ed7ltg76dyf", clientSecret: "6PQF5XYK59qPvrJq", state: "DLKDJF45DIWOERCM", permissions: ["r_emailaddress", "r_basicprofile"], redirectUrl: "https://www.linkedin.com/developer/apps/5241843/auth/linkedin/callback"))
-    
+
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,35 +95,79 @@ class SignInVC: UIViewController{
     
     func setupView(){
         
-        GIDSignIn.sharedInstance().uiDelegate = self
-        fbLoginBtn.delegate = self
-        fbLoginBtn.readPermissions = ["email"]
-        if FBSDKAccessToken.currentAccessTokenIsActive(){
-            print("logged In")
-        }else{
-            print("not logged In")
+        self.view.backgroundColor = #colorLiteral(red: 0.000113729955, green: 0.5750550628, blue: 0.7006892562, alpha: 1)
+        
+        
+        //Adding view components
+        view.addSubview(container)
+        container.addSubview(stackView)
+        
+        let buttons: [UIButton] = [ googleLoginBtn, facebookLoginBtn, twitterLoginBtn, linkedInLoginBtn, instagramLoginBtn]
+        //let buttons: [UIButton] = [linkedInLoginBtn, instagramLoginBtn]
+        
+        
+        for button in buttons{
+            stackView.addArrangedSubview(button)
         }
         
-        view.addSubview(stackView)
-        
-        googleLoginBtn.snp.makeConstraints { (make) in
-            make.width.equalTo(200)
-            make.height.equalTo(50)
+        //Adding view constraints
+       
+        let stackMargin = 10
+        let buttonWidth = (Int(UIScreen.main.bounds.width) - (stackMargin * 6)) / 5
+        let stackWidth = buttons.count * buttonWidth
+        //let spacingWidth = ((buttons.count - 1) * Int(stackView.spacing))
+        //let containerWidth =  buttonsWidth + spacingWidth
+
+        container.snp.makeConstraints { (make) in
+            
+            make.height.equalTo(buttonWidth)
+            make.width.equalTo(stackWidth)
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-40)
+            
+            /*
+             make.bottom.equalToSuperview().offset(-50)
+             make.trailing.equalToSuperview().offset(-30)
+             make.leading.equalToSuperview().offset(30)
+             make.height.equalToSuperview().offset(40)
+             */
         }
+ 
         
+        /*
+        let buttonsCount = buttons.count * 40
+        let spacingCount = (buttons.count - 1) * Int(stackView.spacing)
+        let containerWidth = buttonsCount + spacingCount
+        
+        container.snp.makeConstraints { (make) in
+            make.height.equalTo(40)
+            make.width.equalTo(containerWidth)
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-50)
+        }
+        */
         stackView.snp.makeConstraints { (make) in
-            make.top.bottom.equalToSuperview().inset(200)
-            make.trailing.leading.equalToSuperview().inset(100)
+            make.edges.equalTo(container)
         }
         
         
-        
+        //Adding login buttons action
+        googleLoginBtn.addTarget(self, action: #selector(googleLogin), for: .touchUpInside)
+        facebookLoginBtn.addTarget(self, action: #selector(fbLogin), for: .touchUpInside)
         linkedInLoginBtn.addTarget(self, action: #selector(liLoginBtnclicked), for: .touchUpInside)
         instagramLoginBtn.addTarget(self, action: #selector(instaLoginBtnClicked), for: .touchUpInside)
+        twitterLoginBtn.addTarget(self, action: #selector(twitterLogin), for: .touchUpInside)
     }
 }
 
 //MARK: - GIDSignInUIDelegate
+extension SignInVC{
+    @objc func googleLogin(){
+        print("Google signIn Pressed")
+        GIDSignIn.sharedInstance().signIn()
+        
+    }
+}
 extension SignInVC : GIDSignInUIDelegate{
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         print("signIn pressed")
@@ -186,23 +243,44 @@ extension SignInVC: FBSDKLoginButtonDelegate{
                             // access individual value in dictionary
                             completion(name, email)
                         }
-                        
                     }
-                    
                 }
             })
         }
     }
     
+    @objc func fbLogin() {
+        let login = FBSDKLoginManager()
+        login.logIn(withReadPermissions: ["email"], from: self) { ( result, error) in
+            if error != nil{
+                print(error?.localizedDescription)
+                
+            }else if (result?.isCancelled)!{
+                print("User Canceled")
+                self.fbLogin()
+                
+            }else{
+                print("User LoggedIn")
+                // Perform any operations on signed in user here.
+                var access_token = result?.token.tokenString
+            }
+        }
+    }
 }
 
 ///LinkedIn login
 extension SignInVC{
     
     @objc func liLoginBtnclicked(){
+        
+        
+        
+        let linkedinHelper = LinkedinSwiftHelper(configuration: LinkedinSwiftConfiguration(clientId: "773ed7ltg76dyf", clientSecret: "6PQF5XYK59qPvrJq", state: "DLKDJF45DIWOERCM", permissions: ["r_emailaddress", "r_basicprofile"], redirectUrl: "https://www.linkedin.com/developer/apps/5241843/auth/linkedin/callback"))
+        
+        
         linkedinHelper.authorizeSuccess({ (lsToken) -> Void in
             //Login success lsToken
-            self.linkedinHelper.requestURL("https://api.linkedin.com/v1/people/~:(id,first-name,last-name,maiden-name,email-address)?format=json",
+        linkedinHelper.requestURL("https://api.linkedin.com/v1/people/~:(id,first-name,last-name,maiden-name,email-address)?format=json",
                                            requestType: LinkedinSwiftRequestGet,
                                            success: { (response) -> Void in
                                             
@@ -239,7 +317,7 @@ extension SignInVC {
     func loginWithInstagram() {
         
         // 2. Initialize your 'InstagramLoginViewController' and set your 'ViewController' to delegate it
-        instagramLogin = InstagramLoginViewController(clientId: API.clientID, redirectUri: API.redirectURI)
+        instagramLogin = InstagramLoginViewController(clientId: API.Insta_clientID, redirectUri: API.Insta_redirectURI)
         instagramLogin.delegate = self
         
         // 3. Customize it
@@ -275,5 +353,20 @@ extension SignInVC: InstagramLoginViewControllerDelegate {
         print(accessToken)
         // And don't forget to dismiss the 'InstagramLoginViewController'
         instagramLogin.dismiss(animated: true)
+    }
+}
+
+
+extension SignInVC{
+    @objc func twitterLogin(){
+        TWTRTwitter.sharedInstance().logIn {
+            (session, error) -> Void in
+            if (session != nil) {
+                print("signed in as \(session?.userName)")
+                print(session?.authToken)
+            } else {
+                print("error: \(String(describing: error?.localizedDescription))")
+            }
+        }
     }
 }

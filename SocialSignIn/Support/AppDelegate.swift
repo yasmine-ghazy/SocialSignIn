@@ -13,7 +13,7 @@ import TwitterKit
 import LinkedinSwift
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         
@@ -28,11 +28,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                                                    open: url, sourceApplication: [UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
             
         }
+        if TWTRTwitter.sharedInstance().application(app, open: url, options: options){
+            return true
+        }
         
         
         return false
     }
-    
+    /*
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let error = error {
             print("\(error.localizedDescription)")
@@ -50,6 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             print(email)
         }
     }
+
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
               withError error: Error!) {
@@ -57,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // ...
         print("log out from goolgle")
     }
-
+ */
     var window: UIWindow?
 
 
@@ -65,8 +69,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Override point for customization after application launch.
         
         //Initialize Sign-in
-        GIDSignIn.sharedInstance().clientID = "98981635536-gtal5dgf6r3cm35ave1qt1q95o1gdj68.apps.googleusercontent.com"
-        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().clientID = API.Google_clientID
+        
+        TWTRTwitter.sharedInstance().start(withConsumerKey: API.Twitter_consumerKey , consumerSecret: API.Twitter_consumerSecret)
         
         return true
     }
