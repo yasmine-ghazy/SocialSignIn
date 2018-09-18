@@ -8,21 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		18181CAE212996AA0077DA69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18181CAD212996AA0077DA69 /* AppDelegate.swift */; };
-		18181CB0212996AA0077DA69 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18181CAF212996AA0077DA69 /* SignInVC.swift */; };
+		18181CB0212996AA0077DA69 /* SocialAuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18181CAF212996AA0077DA69 /* SocialAuthVC.swift */; };
 		18181CB3212996AA0077DA69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18181CB1212996AA0077DA69 /* Main.storyboard */; };
 		18181CB5212996AC0077DA69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18181CB4212996AC0077DA69 /* Assets.xcassets */; };
 		18181CB8212996AC0077DA69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18181CB6212996AC0077DA69 /* LaunchScreen.storyboard */; };
 		18573C2A21490D0D00BB3436 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18573C2921490D0D00BB3436 /* Constants.swift */; };
 		1865A5D7213E83E50082E442 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1865A5D6213E83E50082E442 /* credentials.plist */; };
 		187B6F09214F9A6B00BD6AC2 /* SocialAuthLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B6F08214F9A6B00BD6AC2 /* SocialAuthLayout.swift */; };
+		187B6F0B214FA1C300BD6AC2 /* BaseLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B6F0A214FA1C300BD6AC2 /* BaseLayout.swift */; };
+		187B6F0D214FA54000BD6AC2 /* SocialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B6F0C214FA54000BD6AC2 /* SocialButton.swift */; };
+		187B6F0F214FA82200BD6AC2 /* SocialAuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B6F0E214FA82200BD6AC2 /* SocialAuthPresenter.swift */; };
 		18A4FE2D213C1F610050BE49 /* SocialAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A4FE2C213C1F610050BE49 /* SocialAuthentication.swift */; };
-		E97214A24D35FA970775CC39 /* Pods_SocialSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92EF57A6409F25AA15AA9F37 /* Pods_SocialSignIn.framework */; };
+		C22C8C2E5FC5BD8D167831C8 /* Pods_SocialSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF07205418B87E17D2E8216 /* Pods_SocialSignIn.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		18181CAA212996AA0077DA69 /* SocialSignIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialSignIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18181CAD212996AA0077DA69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		18181CAF212996AA0077DA69 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		18181CAF212996AA0077DA69 /* SocialAuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAuthVC.swift; sourceTree = "<group>"; };
 		18181CB2212996AA0077DA69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18181CB4212996AC0077DA69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18181CB7212996AC0077DA69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -30,10 +33,13 @@
 		18573C2921490D0D00BB3436 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1865A5D6213E83E50082E442 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		187B6F08214F9A6B00BD6AC2 /* SocialAuthLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAuthLayout.swift; sourceTree = "<group>"; };
+		187B6F0A214FA1C300BD6AC2 /* BaseLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLayout.swift; sourceTree = "<group>"; };
+		187B6F0C214FA54000BD6AC2 /* SocialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialButton.swift; sourceTree = "<group>"; };
+		187B6F0E214FA82200BD6AC2 /* SocialAuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAuthPresenter.swift; sourceTree = "<group>"; };
 		18A4FE2C213C1F610050BE49 /* SocialAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAuthentication.swift; sourceTree = "<group>"; };
-		3D85E904A0C6324C613E98F5 /* Pods-SocialSignIn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialSignIn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialSignIn/Pods-SocialSignIn.debug.xcconfig"; sourceTree = "<group>"; };
-		92EF57A6409F25AA15AA9F37 /* Pods_SocialSignIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialSignIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF82FE40B8A115FF1345B3AF /* Pods-SocialSignIn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialSignIn.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialSignIn/Pods-SocialSignIn.release.xcconfig"; sourceTree = "<group>"; };
+		1E1D875B83374B5D38D7CAA2 /* Pods-SocialSignIn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialSignIn.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialSignIn/Pods-SocialSignIn.release.xcconfig"; sourceTree = "<group>"; };
+		DCF07205418B87E17D2E8216 /* Pods_SocialSignIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialSignIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA6922E4E908DCCED9148FB0 /* Pods-SocialSignIn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialSignIn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialSignIn/Pods-SocialSignIn.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,28 +47,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E97214A24D35FA970775CC39 /* Pods_SocialSignIn.framework in Frameworks */,
+				C22C8C2E5FC5BD8D167831C8 /* Pods_SocialSignIn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		13EBA19B7588E78177FB0C9F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				92EF57A6409F25AA15AA9F37 /* Pods_SocialSignIn.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		18181CA1212996AA0077DA69 = {
 			isa = PBXGroup;
 			children = (
 				18181CAC212996AA0077DA69 /* SocialSignIn */,
 				18181CAB212996AA0077DA69 /* Products */,
-				1A084EF888F10D0A35266D44 /* Pods */,
-				13EBA19B7588E78177FB0C9F /* Frameworks */,
+				86D954EA70B4C0E29FB090B7 /* Pods */,
+				A43815AB5585070DCB1DF8DE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +79,7 @@
 				187B6F06214F99E500BD6AC2 /* Controller */,
 				187B6F05214F99DA00BD6AC2 /* Presenter */,
 				187B6F04214F99C600BD6AC2 /* View */,
+				18181CB9212996AC0077DA69 /* Info.plist */,
 			);
 			path = SocialSignIn;
 			sourceTree = "<group>";
@@ -89,6 +88,8 @@
 			isa = PBXGroup;
 			children = (
 				187B6F08214F9A6B00BD6AC2 /* SocialAuthLayout.swift */,
+				187B6F0A214FA1C300BD6AC2 /* BaseLayout.swift */,
+				187B6F0C214FA54000BD6AC2 /* SocialButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -97,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				18A4FE2C213C1F610050BE49 /* SocialAuthentication.swift */,
+				187B6F0E214FA82200BD6AC2 /* SocialAuthPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -104,7 +106,7 @@
 		187B6F06214F99E500BD6AC2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				18181CAF212996AA0077DA69 /* SignInVC.swift */,
+				18181CAF212996AA0077DA69 /* SocialAuthVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -116,20 +118,27 @@
 				18181CB1212996AA0077DA69 /* Main.storyboard */,
 				18181CB4212996AC0077DA69 /* Assets.xcassets */,
 				18181CB6212996AC0077DA69 /* LaunchScreen.storyboard */,
-				18181CB9212996AC0077DA69 /* Info.plist */,
 				1865A5D6213E83E50082E442 /* credentials.plist */,
 				18181CAD212996AA0077DA69 /* AppDelegate.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
 		};
-		1A084EF888F10D0A35266D44 /* Pods */ = {
+		86D954EA70B4C0E29FB090B7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3D85E904A0C6324C613E98F5 /* Pods-SocialSignIn.debug.xcconfig */,
-				FF82FE40B8A115FF1345B3AF /* Pods-SocialSignIn.release.xcconfig */,
+				FA6922E4E908DCCED9148FB0 /* Pods-SocialSignIn.debug.xcconfig */,
+				1E1D875B83374B5D38D7CAA2 /* Pods-SocialSignIn.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A43815AB5585070DCB1DF8DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DCF07205418B87E17D2E8216 /* Pods_SocialSignIn.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,12 +148,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18181CBC212996AC0077DA69 /* Build configuration list for PBXNativeTarget "SocialSignIn" */;
 			buildPhases = (
-				E9F662709523A5A6C138089C /* [CP] Check Pods Manifest.lock */,
+				D9D9E121F3D2D6B1974882DC /* [CP] Check Pods Manifest.lock */,
 				18181CA6212996AA0077DA69 /* Sources */,
 				18181CA7212996AA0077DA69 /* Frameworks */,
 				18181CA8212996AA0077DA69 /* Resources */,
-				88FFED67DEF980D63547DD36 /* [CP] Embed Pods Frameworks */,
-				4BB56F04C87C6C7873D9C52E /* [CP] Copy Pods Resources */,
+				31113F43E21DF59F791DB857 /* [CP] Embed Pods Frameworks */,
+				188427D758B7B52ACE8B6867 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -204,7 +213,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4BB56F04C87C6C7873D9C52E /* [CP] Copy Pods Resources */ = {
+		188427D758B7B52ACE8B6867 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -224,7 +233,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SocialSignIn/Pods-SocialSignIn-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		88FFED67DEF980D63547DD36 /* [CP] Embed Pods Frameworks */ = {
+		31113F43E21DF59F791DB857 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -268,7 +277,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SocialSignIn/Pods-SocialSignIn-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E9F662709523A5A6C138089C /* [CP] Check Pods Manifest.lock */ = {
+		D9D9E121F3D2D6B1974882DC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -293,11 +302,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18181CB0212996AA0077DA69 /* SignInVC.swift in Sources */,
+				18181CB0212996AA0077DA69 /* SocialAuthVC.swift in Sources */,
+				187B6F0F214FA82200BD6AC2 /* SocialAuthPresenter.swift in Sources */,
 				18A4FE2D213C1F610050BE49 /* SocialAuthentication.swift in Sources */,
 				18181CAE212996AA0077DA69 /* AppDelegate.swift in Sources */,
 				187B6F09214F9A6B00BD6AC2 /* SocialAuthLayout.swift in Sources */,
+				187B6F0B214FA1C300BD6AC2 /* BaseLayout.swift in Sources */,
 				18573C2A21490D0D00BB3436 /* Constants.swift in Sources */,
+				187B6F0D214FA54000BD6AC2 /* SocialButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,7 +451,7 @@
 		};
 		18181CBD212996AC0077DA69 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D85E904A0C6324C613E98F5 /* Pods-SocialSignIn.debug.xcconfig */;
+			baseConfigurationReference = FA6922E4E908DCCED9148FB0 /* Pods-SocialSignIn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -451,10 +463,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SocialSignIn/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Code95.SocialSignIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
@@ -468,7 +477,7 @@
 		};
 		18181CBE212996AC0077DA69 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF82FE40B8A115FF1345B3AF /* Pods-SocialSignIn.release.xcconfig */;
+			baseConfigurationReference = 1E1D875B83374B5D38D7CAA2 /* Pods-SocialSignIn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -480,10 +489,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SocialSignIn/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Code95.SocialSignIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
