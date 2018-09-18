@@ -80,7 +80,7 @@ extension SocialAuthVC{
 
 extension SocialAuthVC: SocialAuthView{
     func presentInsta(instagramLogin: InstagramLoginViewController) {
-        present(UINavigationController(rootViewController: instagramLogin), animated: true)
+        present(instagramLogin, animated: true, completion: nil)
     }
     
     func setUserToken(token: String) {

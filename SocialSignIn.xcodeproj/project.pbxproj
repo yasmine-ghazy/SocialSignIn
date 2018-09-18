@@ -54,10 +54,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		181348AB2150FEEF001A7806 /* SocialLogin */ = {
+			isa = PBXGroup;
+			children = (
+				187B6F06214F99E500BD6AC2 /* Controller */,
+				187B6F05214F99DA00BD6AC2 /* Presenter */,
+				187B6F04214F99C600BD6AC2 /* View */,
+			);
+			path = SocialLogin;
+			sourceTree = "<group>";
+		};
+		181348AC2150FFC5001A7806 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		181348AD2150FFD3001A7806 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
 		18181CA1212996AA0077DA69 = {
 			isa = PBXGroup;
 			children = (
 				18181CAC212996AA0077DA69 /* SocialSignIn */,
+				187B6F07214F99F300BD6AC2 /* Support */,
 				18181CAB212996AA0077DA69 /* Products */,
 				86D954EA70B4C0E29FB090B7 /* Pods */,
 				A43815AB5585070DCB1DF8DE /* Frameworks */,
@@ -75,11 +100,10 @@
 		18181CAC212996AA0077DA69 /* SocialSignIn */ = {
 			isa = PBXGroup;
 			children = (
-				187B6F07214F99F300BD6AC2 /* Support */,
-				187B6F06214F99E500BD6AC2 /* Controller */,
-				187B6F05214F99DA00BD6AC2 /* Presenter */,
-				187B6F04214F99C600BD6AC2 /* View */,
 				18181CB9212996AC0077DA69 /* Info.plist */,
+				181348AD2150FFD3001A7806 /* Signup */,
+				181348AC2150FFC5001A7806 /* Login */,
+				181348AB2150FEEF001A7806 /* SocialLogin */,
 			);
 			path = SocialSignIn;
 			sourceTree = "<group>";
@@ -463,7 +487,10 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SocialSignIn/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Code95.SocialSignIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
@@ -489,7 +516,10 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SocialSignIn/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Code95.SocialSignIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
