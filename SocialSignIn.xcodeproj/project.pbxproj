@@ -8,38 +8,61 @@
 
 /* Begin PBXBuildFile section */
 		18181CAE212996AA0077DA69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18181CAD212996AA0077DA69 /* AppDelegate.swift */; };
-		18181CB0212996AA0077DA69 /* SocialAuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18181CAF212996AA0077DA69 /* SocialAuthVC.swift */; };
 		18181CB3212996AA0077DA69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18181CB1212996AA0077DA69 /* Main.storyboard */; };
 		18181CB5212996AC0077DA69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18181CB4212996AC0077DA69 /* Assets.xcassets */; };
 		18181CB8212996AC0077DA69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18181CB6212996AC0077DA69 /* LaunchScreen.storyboard */; };
 		18573C2A21490D0D00BB3436 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18573C2921490D0D00BB3436 /* Constants.swift */; };
 		1865A5D7213E83E50082E442 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1865A5D6213E83E50082E442 /* credentials.plist */; };
-		187B6F09214F9A6B00BD6AC2 /* SocialAuthLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B6F08214F9A6B00BD6AC2 /* SocialAuthLayout.swift */; };
+		187B6F09214F9A6B00BD6AC2 /* LoginLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B6F08214F9A6B00BD6AC2 /* LoginLayout.swift */; };
 		187B6F0B214FA1C300BD6AC2 /* BaseLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B6F0A214FA1C300BD6AC2 /* BaseLayout.swift */; };
 		187B6F0D214FA54000BD6AC2 /* SocialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B6F0C214FA54000BD6AC2 /* SocialButton.swift */; };
 		187B6F0F214FA82200BD6AC2 /* SocialAuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B6F0E214FA82200BD6AC2 /* SocialAuthPresenter.swift */; };
-		18A4FE2D213C1F610050BE49 /* SocialAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A4FE2C213C1F610050BE49 /* SocialAuthentication.swift */; };
-		C22C8C2E5FC5BD8D167831C8 /* Pods_SocialSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF07205418B87E17D2E8216 /* Pods_SocialSignIn.framework */; };
+		18AA913F21523A9400F50D2D /* ForgetPasswordResetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AA913E21523A9400F50D2D /* ForgetPasswordResetVC.swift */; };
+		18AA91432152983400F50D2D /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AA91422152983400F50D2D /* ChangePasswordVC.swift */; };
+		18AA91452152985500F50D2D /* ChangePasswordLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AA91442152985500F50D2D /* ChangePasswordLayout.swift */; };
+		18AA914721529A5F00F50D2D /* TapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AA914621529A5F00F50D2D /* TapGesture.swift */; };
+		18D246E421538586001ACB68 /* ForgetPasswordResetLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D246E321538586001ACB68 /* ForgetPasswordResetLayout.swift */; };
+		18D246E621538626001ACB68 /* ForgetPasswordVerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D246E521538626001ACB68 /* ForgetPasswordVerificationVC.swift */; };
+		18D246E821538654001ACB68 /* ForgetPasswordVerificationLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D246E721538654001ACB68 /* ForgetPasswordVerificationLayout.swift */; };
+		18D246EA215386D3001ACB68 /* ForgetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D246E9215386D3001ACB68 /* ForgetPasswordVC.swift */; };
+		18D246EC215386EC001ACB68 /* ForgetPasswordLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D246EB215386EC001ACB68 /* ForgetPasswordLayout.swift */; };
+		18D246EE215394E8001ACB68 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D246ED215394E8001ACB68 /* LoginVC.swift */; };
+		18D246F021539D93001ACB68 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D246EF21539D93001ACB68 /* AppColors.swift */; };
+		18D246FD2153BDC3001ACB68 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18D246FF2153BDC3001ACB68 /* Localizable.strings */; };
+		EEF090083994ABDA36393A17 /* Pods_SocialSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 489D8B4ED91E0FAF5886AC28 /* Pods_SocialSignIn.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		18181CAA212996AA0077DA69 /* SocialSignIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialSignIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18181CAD212996AA0077DA69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		18181CAF212996AA0077DA69 /* SocialAuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAuthVC.swift; sourceTree = "<group>"; };
 		18181CB2212996AA0077DA69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18181CB4212996AC0077DA69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18181CB7212996AC0077DA69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18181CB9212996AC0077DA69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18573C2921490D0D00BB3436 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1865A5D6213E83E50082E442 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
-		187B6F08214F9A6B00BD6AC2 /* SocialAuthLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAuthLayout.swift; sourceTree = "<group>"; };
+		187B6F08214F9A6B00BD6AC2 /* LoginLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginLayout.swift; sourceTree = "<group>"; };
 		187B6F0A214FA1C300BD6AC2 /* BaseLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLayout.swift; sourceTree = "<group>"; };
 		187B6F0C214FA54000BD6AC2 /* SocialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialButton.swift; sourceTree = "<group>"; };
 		187B6F0E214FA82200BD6AC2 /* SocialAuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAuthPresenter.swift; sourceTree = "<group>"; };
-		18A4FE2C213C1F610050BE49 /* SocialAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAuthentication.swift; sourceTree = "<group>"; };
-		1E1D875B83374B5D38D7CAA2 /* Pods-SocialSignIn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialSignIn.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialSignIn/Pods-SocialSignIn.release.xcconfig"; sourceTree = "<group>"; };
-		DCF07205418B87E17D2E8216 /* Pods_SocialSignIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialSignIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA6922E4E908DCCED9148FB0 /* Pods-SocialSignIn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialSignIn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialSignIn/Pods-SocialSignIn.debug.xcconfig"; sourceTree = "<group>"; };
+		18AA913E21523A9400F50D2D /* ForgetPasswordResetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordResetVC.swift; sourceTree = "<group>"; };
+		18AA91422152983400F50D2D /* ChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
+		18AA91442152985500F50D2D /* ChangePasswordLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordLayout.swift; sourceTree = "<group>"; };
+		18AA914621529A5F00F50D2D /* TapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGesture.swift; sourceTree = "<group>"; };
+		18D246E321538586001ACB68 /* ForgetPasswordResetLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPasswordResetLayout.swift; sourceTree = "<group>"; };
+		18D246E521538626001ACB68 /* ForgetPasswordVerificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVerificationVC.swift; sourceTree = "<group>"; };
+		18D246E721538654001ACB68 /* ForgetPasswordVerificationLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVerificationLayout.swift; sourceTree = "<group>"; };
+		18D246E9215386D3001ACB68 /* ForgetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVC.swift; sourceTree = "<group>"; };
+		18D246EB215386EC001ACB68 /* ForgetPasswordLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordLayout.swift; sourceTree = "<group>"; };
+		18D246ED215394E8001ACB68 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		18D246EF21539D93001ACB68 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		18D246F12153BC15001ACB68 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		18D246F22153BC15001ACB68 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		18D246FE2153BDC3001ACB68 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		18D247002153BE0C001ACB68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		489D8B4ED91E0FAF5886AC28 /* Pods_SocialSignIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialSignIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		86064CFC70306DDFB7B629BE /* Pods-SocialSignIn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialSignIn.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialSignIn/Pods-SocialSignIn.release.xcconfig"; sourceTree = "<group>"; };
+		F7536EAA857E5340E8FA9A1E /* Pods-SocialSignIn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialSignIn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialSignIn/Pods-SocialSignIn.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,45 +70,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C22C8C2E5FC5BD8D167831C8 /* Pods_SocialSignIn.framework in Frameworks */,
+				EEF090083994ABDA36393A17 /* Pods_SocialSignIn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		181348AB2150FEEF001A7806 /* SocialLogin */ = {
+		181348AB2150FEEF001A7806 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				187B6F06214F99E500BD6AC2 /* Controller */,
-				187B6F05214F99DA00BD6AC2 /* Presenter */,
-				187B6F04214F99C600BD6AC2 /* View */,
-			);
-			path = SocialLogin;
-			sourceTree = "<group>";
-		};
-		181348AC2150FFC5001A7806 /* Login */ = {
-			isa = PBXGroup;
-			children = (
+				18D246ED215394E8001ACB68 /* LoginVC.swift */,
+				187B6F0E214FA82200BD6AC2 /* SocialAuthPresenter.swift */,
+				187B6F08214F9A6B00BD6AC2 /* LoginLayout.swift */,
+				187B6F0C214FA54000BD6AC2 /* SocialButton.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
 		};
-		181348AD2150FFD3001A7806 /* Signup */ = {
+		181348AD2150FFD3001A7806 /* Change Password */ = {
 			isa = PBXGroup;
 			children = (
+				18AA91422152983400F50D2D /* ChangePasswordVC.swift */,
+				18AA91442152985500F50D2D /* ChangePasswordLayout.swift */,
 			);
-			path = Signup;
+			path = "Change Password";
 			sourceTree = "<group>";
 		};
 		18181CA1212996AA0077DA69 = {
 			isa = PBXGroup;
 			children = (
 				18181CAC212996AA0077DA69 /* SocialSignIn */,
+				18D246F52153BCB4001ACB68 /* Language */,
 				187B6F07214F99F300BD6AC2 /* Support */,
 				18181CAB212996AA0077DA69 /* Products */,
-				86D954EA70B4C0E29FB090B7 /* Pods */,
-				A43815AB5585070DCB1DF8DE /* Frameworks */,
+				86C58858262A34FEDDB99CBD /* Pods */,
+				670B989EF36577BF9453166E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,68 +121,65 @@
 			isa = PBXGroup;
 			children = (
 				18181CB9212996AC0077DA69 /* Info.plist */,
-				181348AD2150FFD3001A7806 /* Signup */,
-				181348AC2150FFC5001A7806 /* Login */,
-				181348AB2150FEEF001A7806 /* SocialLogin */,
+				18AA913D215239EE00F50D2D /* Forget Password */,
+				181348AB2150FEEF001A7806 /* Login */,
+				181348AD2150FFD3001A7806 /* Change Password */,
 			);
 			path = SocialSignIn;
-			sourceTree = "<group>";
-		};
-		187B6F04214F99C600BD6AC2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				187B6F08214F9A6B00BD6AC2 /* SocialAuthLayout.swift */,
-				187B6F0A214FA1C300BD6AC2 /* BaseLayout.swift */,
-				187B6F0C214FA54000BD6AC2 /* SocialButton.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		187B6F05214F99DA00BD6AC2 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				18A4FE2C213C1F610050BE49 /* SocialAuthentication.swift */,
-				187B6F0E214FA82200BD6AC2 /* SocialAuthPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		187B6F06214F99E500BD6AC2 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				18181CAF212996AA0077DA69 /* SocialAuthVC.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		187B6F07214F99F300BD6AC2 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				187B6F0A214FA1C300BD6AC2 /* BaseLayout.swift */,
 				18573C2921490D0D00BB3436 /* Constants.swift */,
 				18181CB1212996AA0077DA69 /* Main.storyboard */,
 				18181CB4212996AC0077DA69 /* Assets.xcassets */,
 				18181CB6212996AC0077DA69 /* LaunchScreen.storyboard */,
 				1865A5D6213E83E50082E442 /* credentials.plist */,
 				18181CAD212996AA0077DA69 /* AppDelegate.swift */,
+				18AA914621529A5F00F50D2D /* TapGesture.swift */,
+				18D246EF21539D93001ACB68 /* AppColors.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
 		};
-		86D954EA70B4C0E29FB090B7 /* Pods */ = {
+		18AA913D215239EE00F50D2D /* Forget Password */ = {
 			isa = PBXGroup;
 			children = (
-				FA6922E4E908DCCED9148FB0 /* Pods-SocialSignIn.debug.xcconfig */,
-				1E1D875B83374B5D38D7CAA2 /* Pods-SocialSignIn.release.xcconfig */,
+				18AA913E21523A9400F50D2D /* ForgetPasswordResetVC.swift */,
+				18D246E321538586001ACB68 /* ForgetPasswordResetLayout.swift */,
+				18D246E521538626001ACB68 /* ForgetPasswordVerificationVC.swift */,
+				18D246E721538654001ACB68 /* ForgetPasswordVerificationLayout.swift */,
+				18D246E9215386D3001ACB68 /* ForgetPasswordVC.swift */,
+				18D246EB215386EC001ACB68 /* ForgetPasswordLayout.swift */,
 			);
-			name = Pods;
+			path = "Forget Password";
 			sourceTree = "<group>";
 		};
-		A43815AB5585070DCB1DF8DE /* Frameworks */ = {
+		18D246F52153BCB4001ACB68 /* Language */ = {
 			isa = PBXGroup;
 			children = (
-				DCF07205418B87E17D2E8216 /* Pods_SocialSignIn.framework */,
+				18D246FF2153BDC3001ACB68 /* Localizable.strings */,
+			);
+			path = Language;
+			sourceTree = "<group>";
+		};
+		670B989EF36577BF9453166E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				489D8B4ED91E0FAF5886AC28 /* Pods_SocialSignIn.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		86C58858262A34FEDDB99CBD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F7536EAA857E5340E8FA9A1E /* Pods-SocialSignIn.debug.xcconfig */,
+				86064CFC70306DDFB7B629BE /* Pods-SocialSignIn.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,12 +189,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18181CBC212996AC0077DA69 /* Build configuration list for PBXNativeTarget "SocialSignIn" */;
 			buildPhases = (
-				D9D9E121F3D2D6B1974882DC /* [CP] Check Pods Manifest.lock */,
+				702171B158F73B23A0A26393 /* [CP] Check Pods Manifest.lock */,
 				18181CA6212996AA0077DA69 /* Sources */,
 				18181CA7212996AA0077DA69 /* Frameworks */,
 				18181CA8212996AA0077DA69 /* Resources */,
-				31113F43E21DF59F791DB857 /* [CP] Embed Pods Frameworks */,
-				188427D758B7B52ACE8B6867 /* [CP] Copy Pods Resources */,
+				F5EAC83D0FCAD340566A73A5 /* [CP] Embed Pods Frameworks */,
+				CF069281B663984FA97EDF62 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -227,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18D246FD2153BDC3001ACB68 /* Localizable.strings in Resources */,
 				18181CB8212996AC0077DA69 /* LaunchScreen.storyboard in Resources */,
 				1865A5D7213E83E50082E442 /* credentials.plist in Resources */,
 				18181CB5212996AC0077DA69 /* Assets.xcassets in Resources */,
@@ -237,7 +255,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		188427D758B7B52ACE8B6867 /* [CP] Copy Pods Resources */ = {
+		702171B158F73B23A0A26393 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SocialSignIn-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF069281B663984FA97EDF62 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -257,7 +293,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SocialSignIn/Pods-SocialSignIn-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		31113F43E21DF59F791DB857 /* [CP] Embed Pods Frameworks */ = {
+		F5EAC83D0FCAD340566A73A5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -274,6 +310,9 @@
 				"${BUILT_PRODUCTS_DIR}/IOSLinkedInAPIFix/IOSLinkedInAPIFix.framework",
 				"${BUILT_PRODUCTS_DIR}/InstagramLogin/InstagramLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/LinkedinSwift/LinkedinSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
+				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftInstagram/SwiftInstagram.framework",
 				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
@@ -291,6 +330,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IOSLinkedInAPIFix.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InstagramLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LinkedinSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftInstagram.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
@@ -301,24 +343,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SocialSignIn/Pods-SocialSignIn-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D9D9E121F3D2D6B1974882DC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SocialSignIn-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -326,13 +350,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18181CB0212996AA0077DA69 /* SocialAuthVC.swift in Sources */,
+				18AA913F21523A9400F50D2D /* ForgetPasswordResetVC.swift in Sources */,
+				18D246EE215394E8001ACB68 /* LoginVC.swift in Sources */,
+				18D246E421538586001ACB68 /* ForgetPasswordResetLayout.swift in Sources */,
+				18D246F021539D93001ACB68 /* AppColors.swift in Sources */,
 				187B6F0F214FA82200BD6AC2 /* SocialAuthPresenter.swift in Sources */,
-				18A4FE2D213C1F610050BE49 /* SocialAuthentication.swift in Sources */,
+				18AA91432152983400F50D2D /* ChangePasswordVC.swift in Sources */,
+				18AA91452152985500F50D2D /* ChangePasswordLayout.swift in Sources */,
+				18D246E621538626001ACB68 /* ForgetPasswordVerificationVC.swift in Sources */,
 				18181CAE212996AA0077DA69 /* AppDelegate.swift in Sources */,
-				187B6F09214F9A6B00BD6AC2 /* SocialAuthLayout.swift in Sources */,
+				18AA914721529A5F00F50D2D /* TapGesture.swift in Sources */,
+				187B6F09214F9A6B00BD6AC2 /* LoginLayout.swift in Sources */,
 				187B6F0B214FA1C300BD6AC2 /* BaseLayout.swift in Sources */,
 				18573C2A21490D0D00BB3436 /* Constants.swift in Sources */,
+				18D246E821538654001ACB68 /* ForgetPasswordVerificationLayout.swift in Sources */,
+				18D246EC215386EC001ACB68 /* ForgetPasswordLayout.swift in Sources */,
+				18D246EA215386D3001ACB68 /* ForgetPasswordVC.swift in Sources */,
 				187B6F0D214FA54000BD6AC2 /* SocialButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +377,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				18181CB2212996AA0077DA69 /* Base */,
+				18D246F12153BC15001ACB68 /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -352,8 +386,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				18181CB7212996AC0077DA69 /* Base */,
+				18D246F22153BC15001ACB68 /* ar */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		18D246FF2153BDC3001ACB68 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18D246FE2153BDC3001ACB68 /* ar */,
+				18D247002153BE0C001ACB68 /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -363,6 +407,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -423,6 +468,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -475,7 +521,7 @@
 		};
 		18181CBD212996AC0077DA69 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA6922E4E908DCCED9148FB0 /* Pods-SocialSignIn.debug.xcconfig */;
+			baseConfigurationReference = F7536EAA857E5340E8FA9A1E /* Pods-SocialSignIn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -487,10 +533,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SocialSignIn/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Code95.SocialSignIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
@@ -504,7 +547,7 @@
 		};
 		18181CBE212996AC0077DA69 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E1D875B83374B5D38D7CAA2 /* Pods-SocialSignIn.release.xcconfig */;
+			baseConfigurationReference = 86064CFC70306DDFB7B629BE /* Pods-SocialSignIn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -516,10 +559,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SocialSignIn/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Code95.SocialSignIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;

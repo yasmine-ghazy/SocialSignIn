@@ -16,7 +16,7 @@ class ForgetPasswordResetLayout: BaseLayout {
     ///This is the main container that have all sub containers
     lazy var container: UIView = {
         let v = UIView()
-        v.backgroundColor = .white
+        v.backgroundColor = SecondColors.BackGroud
         return v
     }()
     
@@ -34,19 +34,20 @@ class ForgetPasswordResetLayout: BaseLayout {
     lazy var passwordTF: TextField = {
         let passwordField = TextField()
         
+        passwordField.textAlignment = .natural
         //Setting placeholder text and colors
-        passwordField.placeholder = "Enter New Password"
-        passwordField.placeholderNormalColor = Color.lightGray
-        passwordField.placeholderActiveColor = #colorLiteral(red: 0.000113729955, green: 0.5750550628, blue: 0.7006892562, alpha: 1)
+        passwordField.placeholder = "new_password".localized()
+        passwordField.placeholderNormalColor = SecondColors.PlaceholderNormal//Color.lightGray
+        passwordField.placeholderActiveColor = SecondColors.PlaceholderActive
         passwordField.placeholderAnimation = .hidden
         
         //Setting Divider colors
-        passwordField.dividerActiveColor = #colorLiteral(red: 0.000113729955, green: 0.5750550628, blue: 0.7006892562, alpha: 1)
+        passwordField.dividerActiveColor = SecondColors.divider
         
         // Setting the visibilityIconButton color.
         passwordField.isVisibilityIconButtonEnabled = true
         passwordField.clearButtonMode = .whileEditing
-        passwordField.visibilityIconButton?.tintColor = .lightGray
+        passwordField.visibilityIconButton?.tintColor = SecondColors.divider //.lightGray
         
         //Setting focus on this  textField
         passwordField.resignFirstResponder()
@@ -57,27 +58,28 @@ class ForgetPasswordResetLayout: BaseLayout {
     lazy var confirmPasswordTF: TextField = {
         let passwordField = TextField()
         
+        passwordField.textAlignment = .natural
         //Setting placeholder text and colors
-        passwordField.placeholder = "Confirm New Password"
-        passwordField.placeholderNormalColor = Color.lightGray
-        passwordField.placeholderActiveColor = #colorLiteral(red: 0.000113729955, green: 0.5750550628, blue: 0.7006892562, alpha: 1)
+        passwordField.placeholder = "confirm_password".localized()
+        passwordField.placeholderNormalColor = SecondColors.PlaceholderNormal
+        passwordField.placeholderActiveColor = SecondColors.PlaceholderActive
         passwordField.placeholderAnimation = .hidden
 
         //Setting Divider colors
-        passwordField.dividerActiveColor = #colorLiteral(red: 0.000113729955, green: 0.5750550628, blue: 0.7006892562, alpha: 1)
+        passwordField.dividerActiveColor = SecondColors.divider
         
         // Setting the visibilityIconButton color.
         passwordField.isVisibilityIconButtonEnabled = true
         passwordField.clearButtonMode = .whileEditing
-        passwordField.visibilityIconButton?.tintColor = .lightGray
+        passwordField.visibilityIconButton?.tintColor = SecondColors.divider //.lightGray
         
         return passwordField
     }()
     
     lazy var resetPasswordBtn: RaisedButton = {
-        let button = RaisedButton(title: "RESET PASSWORD", titleColor: .white)
-        button.pulseColor = .white
-        button.backgroundColor = #colorLiteral(red: 0.000113729955, green: 0.5750550628, blue: 0.7006892562, alpha: 1)
+        let button = RaisedButton(title: "reset_password".localized(), titleColor: SecondColors.ButtonTitle)
+        button.pulseColor = SecondColors.ButtonTitle //.white
+        button.backgroundColor = SecondColors.ButtonBackground
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         button.layer.cornerRadius = 5
         return button

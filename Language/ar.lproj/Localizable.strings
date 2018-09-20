@@ -5,3 +5,30 @@
   Created by apple on 9/20/18.
   Copyright © 2018 Hesham. All rights reserved.
 */
+
+//Login Strings
+"identity" = "أدخل الايميل, اسم المستخدم أو رقم الهاتف";
+"password" =  "كلمة السر";
+"forget_password" = "هل نسيت كلمة السر؟";
+"login" = "تسجيل الدخول";
+"register"= "ليس لديك حساب؟ اشترك الان";
+"social_login" = "أو سجل الدخول من";
+
+//Change Password Strings
+"change_password" = "تغيير كلمة المرور";
+"old_password" = "أدخل كلمة السر القديمة";
+"new_password" = "أدخل كلمة المرور الجديدة" ;
+"confirm_password" = "أعد كتابة كلمة السر";
+"reset_password" = "تعيين كلمة السر";
+
+//Forget Password
+"forget_password" = "نسيت كلمة السر";
+"identity_lbl" = "أدخل الايميل او رقم الهاتف لاعادة تعيين كلمة السر";
+"identity_tf" = "أدخل الايميل أو رقم الهاتف";
+"confirm" = "تأكيد";
+
+//Forget Password Verification
+"verification_lbl" = "أدخل رمز التحقق الذي تلقيته في بريدك الإلكتروني";
+"verification_tf" = "رمز التحقق";
+"confirm_code" = "تأكيد الرمز";
+

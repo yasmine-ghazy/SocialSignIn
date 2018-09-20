@@ -11,23 +11,19 @@ import UIKit
 class ForgetPasswordResetVC: UIViewController {
 
     //MARK: Properties
-    var layout: ForgetPasswordLayout_Reset!
+    var layout: ForgetPasswordResetLayout!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        print("Forget password vs is loaded")
+        print("Forget password vc is loaded")
         
         //Customize navigatin bar
-        
-        self.title = "Forget Password"
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
-        self.navigationController?.navigationBar.backItem?.title = "Back"
-        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.000113729955, green: 0.5750550628, blue: 0.7006892562, alpha: 1)
-        
+        self.navigationItem.title = "forget_password".localized()
+
         //Setting Layout
-        self.layout = ForgetPasswordLayout_Reset(superview: self.view)
+        self.layout = ForgetPasswordResetLayout(superview: self.view)
         layout.setupView()
         
     }

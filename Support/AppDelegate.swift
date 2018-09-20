@@ -47,6 +47,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         TWTRTwitter.sharedInstance().start(withConsumerKey: API.Twitter_consumerKey , consumerSecret: API.Twitter_consumerSecret)
         
+        //open initial vc
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let initialVC = LoginVC()
+        let nav = UINavigationController(rootViewController: initialVC)
+        nav.setNavigationBarHidden(true, animated: false)
+        self.window?.rootViewController = nav
+        self.window?.makeKeyAndVisible()
+        
+        //Setup Navigationbar
+        var navigationBarAppearace = UINavigationBar.appearance()
+        navigationBarAppearace.tintColor = SecondColors.backBtn
+        // #colorLiteral(red: 0.000113729955, green: 0.5750550628, blue: 0.7006892562, alpha: 1)
+        /*
+        let BarButtonItemAppearance = UIBarButtonItem.appearance()
+        BarButtonItemAppearance.setTitleTextAttributes([kCTForegroundColorAttributeName as NSAttributedStringKey: UIColor.clear], for: .normal)
+        */
+        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(-1000, 0), for:UIBarMetrics.default)
         return true
     }
 

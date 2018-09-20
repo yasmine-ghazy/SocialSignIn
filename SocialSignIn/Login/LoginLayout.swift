@@ -9,8 +9,9 @@
 import UIKit
 import SnapKit
 import Material
+import Localize_Swift
 
-class SocialAuthLayout: BaseLayout {
+class LoginLayout: BaseLayout {
     
     //MARK: Properties
     // var socialAuthDelegate: SocialAuthDelegate!
@@ -18,28 +19,25 @@ class SocialAuthLayout: BaseLayout {
     ///This is the main container that have all sub containers
     lazy var container: UIView = {
         let v = UIView()
-        v.backgroundColor = #colorLiteral(red: 0.000113729955, green: 0.5750550628, blue: 0.7006892562, alpha: 1)
+        v.backgroundColor = MainColors.BackGroud
         return v
     }()
     
     ///This is the top container that have logo , App Title
     lazy var topContainer: UIView = {
         let v = UIView()
-        //v.backgroundColor = UIColor.lightGray
         return v
     }()
     
     ///This is the middle container that have textFields, Buttons
     lazy var middleContainer: UIView = {
         let v = UIView()
-        //v.backgroundColor = UIColor.gray
         return v
     }()
     
     ///This is the bottom contatiner that have SocialLogin elements
     lazy var bottomContainer: UIView = {
         let v = UIView()
-        //v.backgroundColor = UIColor.darkGray
         return v
     }()
     
@@ -55,19 +53,17 @@ class SocialAuthLayout: BaseLayout {
     lazy var appTitleLbl: UILabel = {
         let label = UILabel()
         label.text = "LOREM IPSUM"
-        label.textColor = UIColor.white
+        label.textColor = MainColors.text //UIColor.white
         label.textAlignment = .center
-        //label.backgroundColor = .black
-        //label.font = UIFont(name: "Roboto-Bold", size: 20)
         label.font = UIFont.boldSystemFont(ofSize: 18)
         return label
     }()
     
     lazy var socialLoginLbl: UILabel = {
         let lbl = UILabel()
-        lbl.text = "OR LOGIN WITH"
-        lbl.textColor = UIColor.white
-        lbl.backgroundColor = #colorLiteral(red: 0.000113729955, green: 0.5750550628, blue: 0.7006892562, alpha: 1)
+        lbl.text = "social_login".localized()
+        lbl.textColor = MainColors.text // .white
+        lbl.backgroundColor = MainColors.BackGroud
         lbl.font = lbl.font.withSize(14)
         lbl.textAlignment = .center
         return lbl
@@ -75,17 +71,23 @@ class SocialAuthLayout: BaseLayout {
     
     lazy var forgetPasswordBtn: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Forget Password?"
-        lbl.textColor = UIColor.white
+        lbl.text = "forget_password".localized()
+        lbl.textColor = MainColors.text // .white
         lbl.font = lbl.font.withSize(12)
-        lbl.textAlignment = .right
+        
+        let preferredLanguage = NSLocale.preferredLanguages[0]
+        if preferredLanguage.starts(with: "ar"){
+            lbl.textAlignment = .left
+        }else{
+            lbl.textAlignment = .right
+        }
         return lbl
     }()
     
     lazy var registerBtn: UILabel = {
         let lbl = UILabel()
-        lbl.textColor = UIColor.white
-        lbl.text = "You don't have account? Register now"
+        lbl.textColor =  MainColors.text //UIColor.white
+        lbl.text = "register".localized()
         lbl.font = lbl.font.withSize(12)
         lbl.textAlignment = .center
         return lbl
@@ -96,16 +98,17 @@ class SocialAuthLayout: BaseLayout {
     lazy var identityTF: ErrorTextField = {
         let textField = ErrorTextField()
         
-        textField.textColor = .white
+        textField.textColor = MainColors.text//.white
+        textField.textAlignment = .natural
         
         //Setting placeholder text and colors
-        textField.placeholder = "Enter Email, User name or phone"
-        textField.placeholderNormalColor = .white
-        textField.placeholderActiveColor = .white
+        textField.placeholder = "identity".localized()
+        textField.placeholderNormalColor = MainColors.Placeholder //.white
+        textField.placeholderActiveColor = MainColors.Placeholder //.white
         textField.placeholderAnimation = .hidden
         
         //Setting Divider colors
-        textField.dividerActiveColor = .white
+        textField.dividerActiveColor = MainColors.divider //.white
         
         // Setting the visibilityIconButton color.
         textField.clearButtonMode = .whileEditing
@@ -119,21 +122,22 @@ class SocialAuthLayout: BaseLayout {
     lazy var passwordTF: TextField = {
         let passwordField = TextField()
         
-         passwordField.textColor = .white
+         passwordField.textColor = MainColors.text //.white
+        passwordField.textAlignment = .natural
         
         //Setting placeholder text and colors
-        passwordField.placeholder = "Password"
-        passwordField.placeholderNormalColor = Color.white
-        passwordField.placeholderActiveColor = .white
+        passwordField.placeholder = "password".localized()
+        passwordField.placeholderNormalColor = MainColors.Placeholder //Color.white
+        passwordField.placeholderActiveColor = MainColors.Placeholder //.white
         passwordField.placeholderAnimation = .hidden
         
         //Setting Divider colors
-        passwordField.dividerActiveColor = .white
+        passwordField.dividerActiveColor = MainColors.divider //.white
         
         // Setting the visibilityIconButton color.
         passwordField.isVisibilityIconButtonEnabled = true
         passwordField.clearButtonMode = .whileEditing
-        passwordField.visibilityIconButton?.tintColor = .white
+        passwordField.visibilityIconButton?.tintColor = MainColors.divider //.white
         
         //Setting focus on this  textField
         passwordField.resignFirstResponder()
@@ -145,9 +149,9 @@ class SocialAuthLayout: BaseLayout {
     
     //Buttons
     lazy var loginBtn: RaisedButton = {
-        let button = RaisedButton(title: "LOGIN", titleColor: #colorLiteral(red: 0.000113729955, green: 0.5750550628, blue: 0.7006892562, alpha: 1))
-        button.backgroundColor = .white
-        button.pulseColor = #colorLiteral(red: 0.000113729955, green: 0.5750550628, blue: 0.7006892562, alpha: 1)
+        let button = RaisedButton(title: "login".localized(), titleColor: MainColors.ButtonTitle)
+        button.backgroundColor = MainColors.ButtonBackground //.white
+        button.pulseColor = MainColors.ButtonTitle
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         button.layer.cornerRadius = 5
         return button
@@ -199,7 +203,7 @@ class SocialAuthLayout: BaseLayout {
     //Dividers Views
     lazy var socialDivider: UIView = {
         let v = UIView()
-        v.backgroundColor = UIColor.white
+        v.backgroundColor = MainColors.divider //UIColor.white
         return v
     }()
     
@@ -227,7 +231,7 @@ class SocialAuthLayout: BaseLayout {
     ///This function add view components to the superview and then call setupConstraints()
     func setupView(){
  
-        self.superview.backgroundColor = #colorLiteral(red: 0.000113729955, green: 0.5750550628, blue: 0.7006892562, alpha: 1)
+        self.superview.backgroundColor = MainColors.BackGroud
         
         //Adding containers to the main container
         self.superview.addSubview(container)

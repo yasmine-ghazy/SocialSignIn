@@ -10,26 +10,34 @@ import UIKit
 
 class ForgetPasswordVerificationVC: UIViewController {
 
+    //MARK: Properties
+    var layout: ForgetPasswordVerificationLayout!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        print("Forget password vs is loaded")
+        
+        //Customize navigatin bar
+        
+        self.navigationItem.title = "forget_password".localized()
+     
+        //Setting Layout
+        layout = ForgetPasswordVerificationLayout(superview: self.view)
+        layout.setupView()
+        
+        //add target
+        layout.ConfirmCodeBtn.addTarget(self, action: #selector(confirmCode), for: .touchUpInside)
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+}
+
+extension ForgetPasswordVerificationVC{
+    @objc func confirmCode(){
+        let vc = ForgetPasswordResetVC()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

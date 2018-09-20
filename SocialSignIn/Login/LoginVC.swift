@@ -21,7 +21,7 @@ class LoginVC: UIViewController{
     
     //MARK: Properties
     
-    var layout: SocialAuthLayout!
+    var layout: LoginLayout!
     var presenter: SocialAuthPresenter!
     
     // MARK: - View Life Cycle
@@ -30,7 +30,7 @@ class LoginVC: UIViewController{
         
         //Setting Layout
         //layout = SocialAuthLayout(superview: self.view, socialAuthDelegate: self )
-        layout = SocialAuthLayout(superview: self.view)
+        layout = LoginLayout(superview: self.view)
         layout.setupView()
         
         //Setting Presenter
@@ -45,14 +45,11 @@ class LoginVC: UIViewController{
         layout.instagramLoginBtn.addTarget(self, action: #selector(instagramLogin), for: .touchUpInside)
         layout.twitterLoginBtn.addTarget(self, action: #selector(twitterLogin), for: .touchUpInside)
         
-        
         //Adding tapGesture on labeles (forgetPassword - register)
         var tapGestureRecognizer1 = UITapGestureRecognizer(target: self, action: #selector(self.forgetPasswordTapped))
         tapGestureRecognizer1.numberOfTapsRequired = 1
         layout.forgetPasswordBtn.addGestureRecognizer(tapGestureRecognizer1)
         layout.forgetPasswordBtn.isUserInteractionEnabled = true
-        
-        
         
         //Adding tapGesture on labeles (forgetPassword - register)
         var tapGestureRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(self.changePasswordTapped))

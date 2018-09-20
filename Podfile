@@ -14,5 +14,7 @@ target 'SocialSignIn' do
     pod 'LinkedinSwift'
     pod 'SwiftInstagram'
     pod 'InstagramLogin'
+    pod 'Material'
+    pod 'Localize-Swift'
     
 end

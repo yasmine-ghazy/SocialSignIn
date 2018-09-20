@@ -5,3 +5,29 @@
   Created by apple on 9/20/18.
   Copyright © 2018 Hesham. All rights reserved.
 */
+
+//Login Strings
+"identity" = "Enter Email, User Name or phone";
+"password" = "Password";
+"forget_password" = "Forget Password?";
+"login" = "LOGIN";
+"register"= "You don't have account? Register now";
+"social_login" = "OR LOGIN WITH";
+
+//Change Password
+"change_password" = "Change Password";
+"old_password" = "Enter Old Password";
+"new_password" = "Enter New Password";
+"confirm_password" = "Confirm New Password";
+"reset_password" = "RESET PASSWORD";
+
+//Forget Password
+"forget_password" = "Forget Password";
+"identity_lbl" = "Enter your email or phone number to reset your password";
+"identity_tf" = "Enter Email or phone Number";
+"confirm" = "CONFIRM";
+
+//Forget Password Verification
+"verification_lbl" = "Enter the verification code that you recieved in your email";
+"verification_TF" = "Verification Code";
+"confirm_code" = "CONFIRM CODE";
