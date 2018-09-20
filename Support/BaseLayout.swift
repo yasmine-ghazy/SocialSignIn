@@ -17,5 +17,11 @@ public class BaseLayout {
         self.superview = superview
         self.superview.backgroundColor = .white
     }
+    
+    func append(elements: [Any], to stackView: UIStackView){
+        for element in elements{
+            stackView.addArrangedSubview(element as! UIView)
+        }
+    }
 }
 

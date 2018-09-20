@@ -8,11 +8,40 @@
 
 import UIKit
 import SnapKit
+import Material
 
 class SocialAuthLayout: BaseLayout {
     
     //MARK: Properties
     // var socialAuthDelegate: SocialAuthDelegate!
+    
+    ///This is the main container that have all sub containers
+    lazy var container: UIView = {
+        let v = UIView()
+        v.backgroundColor = #colorLiteral(red: 0.000113729955, green: 0.5750550628, blue: 0.7006892562, alpha: 1)
+        return v
+    }()
+    
+    ///This is the top container that have logo , App Title
+    lazy var topContainer: UIView = {
+        let v = UIView()
+        //v.backgroundColor = UIColor.lightGray
+        return v
+    }()
+    
+    ///This is the middle container that have textFields, Buttons
+    lazy var middleContainer: UIView = {
+        let v = UIView()
+        //v.backgroundColor = UIColor.gray
+        return v
+    }()
+    
+    ///This is the bottom contatiner that have SocialLogin elements
+    lazy var bottomContainer: UIView = {
+        let v = UIView()
+        //v.backgroundColor = UIColor.darkGray
+        return v
+    }()
     
     //App Logo imageView
     lazy var logoIV: UIImageView = {
@@ -20,6 +49,7 @@ class SocialAuthLayout: BaseLayout {
         iv.contentMode = .scaleAspectFit
         return iv
     }()
+    
     
     //Labels
     lazy var appTitleLbl: UILabel = {
@@ -60,30 +90,64 @@ class SocialAuthLayout: BaseLayout {
         lbl.textAlignment = .center
         return lbl
     }()
- 
+    
     
     //Text Fields
-    lazy var identityTF: UITextField = {
-        let textField = UITextField()
-        textField.attributedPlaceholder = NSAttributedString(string: "Enter Email, User Name or phone...",
-                                                               attributes: [
-                                                                NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font :UIFont(name: "Arial", size: 14)!])
+    lazy var identityTF: ErrorTextField = {
+        let textField = ErrorTextField()
+        
+        textField.textColor = .white
+        
+        //Setting placeholder text and colors
+        textField.placeholder = "Enter Email, User name or phone"
+        textField.placeholderNormalColor = .white
+        textField.placeholderActiveColor = .white
+        textField.placeholderAnimation = .hidden
+        
+        //Setting Divider colors
+        textField.dividerActiveColor = .white
+        
+        // Setting the visibilityIconButton color.
+        textField.clearButtonMode = .whileEditing
+        
+        //Setting focus on this  textField
+        textField.resignFirstResponder()
+        
         return textField
     }()
     
-    lazy var passwordTF: UITextField = {
-        let textField = UITextField()
-        textField.attributedPlaceholder = NSAttributedString(string: "Password",
-                                                             attributes: [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font :UIFont(name: "Arial", size: 14)!])
-        return textField
+    lazy var passwordTF: TextField = {
+        let passwordField = TextField()
+        
+         passwordField.textColor = .white
+        
+        //Setting placeholder text and colors
+        passwordField.placeholder = "Password"
+        passwordField.placeholderNormalColor = Color.white
+        passwordField.placeholderActiveColor = .white
+        passwordField.placeholderAnimation = .hidden
+        
+        //Setting Divider colors
+        passwordField.dividerActiveColor = .white
+        
+        // Setting the visibilityIconButton color.
+        passwordField.isVisibilityIconButtonEnabled = true
+        passwordField.clearButtonMode = .whileEditing
+        passwordField.visibilityIconButton?.tintColor = .white
+        
+        //Setting focus on this  textField
+        passwordField.resignFirstResponder()
+        
+        return passwordField
     }()
+    
+    
     
     //Buttons
-    lazy var loginBtn: UIButton = {
-        let button = UIButton()
-        button.setTitle("LOGIN", for: .normal)
+    lazy var loginBtn: RaisedButton = {
+        let button = RaisedButton(title: "LOGIN", titleColor: #colorLiteral(red: 0.000113729955, green: 0.5750550628, blue: 0.7006892562, alpha: 1))
         button.backgroundColor = .white
-        button.setTitleColor(#colorLiteral(red: 0.000113729955, green: 0.5750550628, blue: 0.7006892562, alpha: 1), for: .normal)
+        button.pulseColor = #colorLiteral(red: 0.000113729955, green: 0.5750550628, blue: 0.7006892562, alpha: 1)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         button.layer.cornerRadius = 5
         return button
@@ -131,58 +195,11 @@ class SocialAuthLayout: BaseLayout {
         return s
     }()
     
-    ///This is the main container that have all sub containers
-    lazy var container: UIView = {
-        let v = UIView()
-        v.backgroundColor = #colorLiteral(red: 0.000113729955, green: 0.5750550628, blue: 0.7006892562, alpha: 1)
-        return v
-    }()
-    
-    ///This is the top container that have logo , App Title
-    lazy var topContainer: UIView = {
-        let v = UIView()
-        //v.backgroundColor = UIColor.lightGray
-        return v
-    }()
-    
-    ///This is the middle container that have textFields, Buttons
-    lazy var middleContainer: UIView = {
-        let v = UIView()
-        //v.backgroundColor = UIColor.gray
-        return v
-    }()
-    
-    ///This is the bottom contatiner that have SocialLogin elements
-    lazy var bottomContainer: UIView = {
-        let v = UIView()
-        //v.backgroundColor = UIColor.darkGray
-        return v
-    }()
     
     //Dividers Views
     lazy var socialDivider: UIView = {
         let v = UIView()
         v.backgroundColor = UIColor.white
-        return v
-    }()
-    lazy var identityDivider: UIView = {
-        let v = UIView()
-        v.backgroundColor = UIColor.white
-        return v
-    }()
-    lazy var passwordDivider: UIView = {
-        let v = UIView()
-        v.backgroundColor = UIColor.white
-        return v
-    }()
-    
-    //DividersContainers
-    lazy var identityContainer: UIView = {
-        let v = UIView()
-        return v
-    }()
-    lazy var passwordContainer: UIView = {
-        let v = UIView()
         return v
     }()
     
@@ -199,10 +216,9 @@ class SocialAuthLayout: BaseLayout {
     
     override init(superview: UIView) {
         super.init(superview: superview)
-        self.superview = superview
-        //self.superview.backgroundColor = .white
+        
         //Set Social Buttons
-        self.socialButtons = [ googleLoginBtn, facebookLoginBtn, twitterLoginBtn, linkedInLoginBtn, instagramLoginBtn]
+        self.socialButtons = [googleLoginBtn, facebookLoginBtn, twitterLoginBtn, linkedInLoginBtn, instagramLoginBtn]
     }
     
     
@@ -225,17 +241,11 @@ class SocialAuthLayout: BaseLayout {
         topContainer.addSubview(appTitleLbl)
         
         //2.setup Middle Container
-        middleElements = [identityContainer, passwordContainer, forgetPasswordBtn, loginBtn, registerBtn]
+        middleElements = [identityTF, passwordTF, forgetPasswordBtn, loginBtn, registerBtn]
         for element in middleElements{
             middleStackView.addArrangedSubview(element as! UIView)
         }
         middleContainer.addSubview(middleStackView)
-        
-        identityContainer.addSubview(identityTF)
-        identityContainer.addSubview(identityDivider)
-        
-        passwordContainer.addSubview(passwordTF)
-        passwordContainer.addSubview(passwordDivider)
         
         //3.Setup Bottom Container
         bottomContainer.addSubview(socialDivider)
@@ -290,19 +300,6 @@ class SocialAuthLayout: BaseLayout {
         }
         
         //Adding Social Buttons constraints
-        /*
-        let stackMargin = 10
-        let buttonWidth = (Int(screenWidth) - (stackMargin * 6)) / 5
-        let stackWidth = socialButtons.count * buttonWidth
-         
-         socialButtonsStackView.snp.makeConstraints { (make) in
-         make.height.equalTo(buttonWidth)
-         make.width.equalTo(stackWidth)
-         make.centerX.equalToSuperview()
-         make.bottom.equalTo(bottomContainer.snp.bottom).offset(-20)
-         }
-        */
-        
         let stackMargin = 25
         let buttonWidth = (Int(screenWidth) - 50 - (stackMargin * 4)) / 5
         let stackWidth = socialButtons.count * buttonWidth + stackMargin * 4
@@ -311,17 +308,17 @@ class SocialAuthLayout: BaseLayout {
             make.height.equalTo(buttonWidth)
             make.width.equalTo(stackWidth)
             make.centerX.equalToSuperview()
-            make.bottom.equalTo(bottomContainer.snp.bottom).offset(-40)
-            //make.centerY.equalTo(bottomContainer.snp.centerY)
+            //make.bottom.equalTo(bottomContainer.snp.bottom).offset(-40)
+            make.centerY.equalTo(bottomContainer)
         }
         
-        
-        
         socialLoginLbl.snp.makeConstraints { (make) in
-            make.leading.equalTo(bottomContainer).offset(70)
-            make.trailing.equalTo(bottomContainer).offset(-70)
+            //make.leading.equalTo(bottomContainer).offset(70)
+            //make.trailing.equalTo(bottomContainer).offset(-70)
+            make.width.equalTo(150)
             make.top.equalTo(bottomContainer.snp.top)
             make.bottom.equalTo(socialButtonsStackView.snp.top)
+            make.centerX.equalTo(bottomContainer)
             
         }
         
@@ -341,28 +338,6 @@ class SocialAuthLayout: BaseLayout {
         middleStackView.snp.makeConstraints { (make) in
             make.edges.equalTo(middleContainer)
         }
-        identityDivider.snp.makeConstraints { (make) in
-            make.leading.trailing.equalTo(identityContainer)
-            make.height.equalTo(2)
-            make.bottom.equalTo(identityContainer.snp.bottom)
-        }
-        identityTF.snp.makeConstraints { (make) in
-            make.top.leading.trailing.equalTo(identityContainer)
-            make.bottom.equalTo(identityDivider.snp.top)
-        }
-        passwordDivider.snp.makeConstraints { (make) in
-            make.leading.trailing.equalTo(passwordContainer)
-            make.height.equalTo(2)
-            make.bottom.equalTo(passwordContainer.snp.bottom)
-        }
-        passwordTF.snp.makeConstraints { (make) in
-            make.top.leading.trailing.equalTo(passwordContainer)
-            make.bottom.equalTo(passwordDivider.snp.top)
-        }
         
-        
-        
- 
     }
-    
 }

@@ -14,9 +14,10 @@ import FBSDKLoginKit
 import LinkedinSwift
 import InstagramLogin
 import TwitterKit
+import Material
 
 ///Sign In view controller
-class SocialAuthVC: UIViewController{
+class LoginVC: UIViewController{
     
     //MARK: Properties
     
@@ -44,11 +45,48 @@ class SocialAuthVC: UIViewController{
         layout.instagramLoginBtn.addTarget(self, action: #selector(instagramLogin), for: .touchUpInside)
         layout.twitterLoginBtn.addTarget(self, action: #selector(twitterLogin), for: .touchUpInside)
         
+        
+        //Adding tapGesture on labeles (forgetPassword - register)
+        var tapGestureRecognizer1 = UITapGestureRecognizer(target: self, action: #selector(self.forgetPasswordTapped))
+        tapGestureRecognizer1.numberOfTapsRequired = 1
+        layout.forgetPasswordBtn.addGestureRecognizer(tapGestureRecognizer1)
+        layout.forgetPasswordBtn.isUserInteractionEnabled = true
+        
+        
+        
+        //Adding tapGesture on labeles (forgetPassword - register)
+        var tapGestureRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(self.changePasswordTapped))
+        tapGestureRecognizer2.numberOfTapsRequired = 1
+        layout.registerBtn.addGestureRecognizer(tapGestureRecognizer2)
+        layout.registerBtn.isUserInteractionEnabled = true
+        
+        //layout.identityTF.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        //Customize Navigatinbar
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
 }
 
-extension SocialAuthVC{
+extension LoginVC{
+    
+    @objc func forgetPasswordTapped(){
+        let vc = ForgetPasswordVC()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func changePasswordTapped(){
+        let vc = ChangePasswordVC()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+
+//Social Login Buttons
+extension LoginVC{
     
     @objc func googleLogin() {
         print("Google signIn Pressed")
@@ -78,7 +116,7 @@ extension SocialAuthVC{
     
 }
 
-extension SocialAuthVC: SocialAuthView{
+extension LoginVC: SocialAuthView{
     func presentInsta(instagramLogin: InstagramLoginViewController) {
         present(instagramLogin, animated: true, completion: nil)
     }
@@ -92,3 +130,21 @@ extension SocialAuthVC: SocialAuthDelegate{
     
 }
 */
+
+// MARK: - Conforming to TextFieldDelegte Methods
+extension ForgetPasswordResetVC: TextFieldDelegate {
+    public func textFieldDidEndEditing(_ textField: UITextField) {
+        (textField as? ErrorTextField)?.isErrorRevealed = false
+        print("Start")
+    }
+    
+    public func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        (textField as? ErrorTextField)?.isErrorRevealed = false
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        (textField as? ErrorTextField)?.isErrorRevealed = true
+        return true
+    }
+}
