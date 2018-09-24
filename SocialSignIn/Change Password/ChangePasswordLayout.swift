@@ -6,20 +6,23 @@
 //  Copyright © 2018 Hesham. All rights reserved.
 //
 
+//Import Frameworks
 import UIKit
-import Material
 
+
+/// This class set the layout for ChangePasswordVC
 class ChangePasswordLayout: BaseLayout{
-
+    
     // MARK: - Properties
     
-    ///This is the main container that have all sub containers
+    ///This is the main container that have stackView object
     lazy var container: UIView = {
         let v = UIView()
-        v.backgroundColor = SecondColors.BackGroud //.white
+        v.backgroundColor = Colors.BackGroud //.white
         return v
     }()
     
+    ///This stackView contains oldPasswordTF, newPasswordTF, confirmPasswordTF, resetPasswordBtn
     lazy var stackView: UIStackView = {
         let s = UIStackView(frame: (superview?.bounds)!)
         s.axis = .vertical
@@ -30,84 +33,24 @@ class ChangePasswordLayout: BaseLayout{
         return s
     }()
     
-    //Text Fields
-    
-    lazy var oldPasswordTF: TextField = {
-        let passwordField = TextField()
-        passwordField.textAlignment = .natural
-        //Setting placeholder text and colors
-        passwordField.placeholder = "old_password".localized()
-        passwordField.placeholderNormalColor = SecondColors.PlaceholderNormal //Color.lightGray
-        passwordField.placeholderActiveColor = SecondColors.PlaceholderActive
-        passwordField.placeholderAnimation = .hidden
-        
-        //Setting Divider colors
-        passwordField.dividerActiveColor = SecondColors.divider
-        
-        // Setting the visibilityIconButton color.
-        passwordField.isVisibilityIconButtonEnabled = true
-        passwordField.clearButtonMode = .whileEditing
-        passwordField.visibilityIconButton?.tintColor = SecondColors.divider //.lightGray
-        
-        //Setting focus on this  textField
-        passwordField.resignFirstResponder()
-        
-        return passwordField
+    ///old password TextField
+    lazy var oldPasswordTF: CustomPasswordTF = {
+        CustomPasswordTF(placeholder: "old_password".localized())
     }()
     
-    lazy var newPasswordTF: TextField = {
-        let passwordField = TextField()
-        
-        passwordField.textAlignment = .natural
-        
-        //Setting placeholder text and colors
-        passwordField.placeholder = "new_password".localized()
-        passwordField.placeholderNormalColor = SecondColors.PlaceholderNormal //Color.lightGray
-        passwordField.placeholderActiveColor = SecondColors.PlaceholderActive
-        passwordField.placeholderAnimation = .hidden
-        
-        //Setting Divider colors
-        passwordField.dividerActiveColor = SecondColors.divider
-        
-        // Setting the visibilityIconButton color.
-        passwordField.isVisibilityIconButtonEnabled = true
-        passwordField.clearButtonMode = .whileEditing
-        passwordField.visibilityIconButton?.tintColor = SecondColors.divider //.lightGray
-        
-        //Setting focus on this  textField
-        passwordField.resignFirstResponder()
-        
-        return passwordField
+    ///new password TextField
+    lazy var newPasswordTF: CustomPasswordTF = {
+        CustomPasswordTF(placeholder: "new_password".localized())
     }()
     
-    lazy var confirmPasswordTF: TextField = {
-        let passwordField = TextField()
-        
-        passwordField.textAlignment = .natural
-        
-        //Setting placeholder text and colors
-        passwordField.placeholder = "confirm_password".localized()
-        passwordField.placeholderNormalColor = SecondColors.PlaceholderNormal //Color.lightGray
-        passwordField.placeholderActiveColor = SecondColors.PlaceholderActive
-        passwordField.placeholderAnimation = .hidden
-        
-        //Setting Divider colors
-        passwordField.dividerActiveColor = SecondColors.divider
-        
-        // Setting the visibilityIconButton color.
-        passwordField.isVisibilityIconButtonEnabled = true
-        passwordField.clearButtonMode = .whileEditing
-        passwordField.visibilityIconButton?.tintColor = SecondColors.divider //.lightGray
-        
-        return passwordField
+    ///confirm password TextField
+    lazy var confirmPasswordTF: CustomPasswordTF = {
+        CustomPasswordTF(placeholder: "confirm_password".localized())
     }()
     
-    lazy var resetPasswordBtn: RaisedButton = {
-        let button = RaisedButton(title: "reset_password".localized(), titleColor:SecondColors.ButtonTitle)
-        button.pulseColor = SecondColors.ButtonTitle //.white
-        button.backgroundColor = SecondColors.ButtonBackground
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        button.layer.cornerRadius = 5
+    ///Reset Password Button
+    lazy var resetPasswordBtn: CustomButton = {
+        let button = CustomButton(title: "reset_password".localized())
         return button
     }()
     
@@ -120,10 +63,13 @@ class ChangePasswordLayout: BaseLayout{
     }
     
     // MARK: - Methods
+    
+    ///This function add view components to the superview and then call setupConstraints()
     func setupView(){
         
         stackElements = [oldPasswordTF, newPasswordTF,confirmPasswordTF, resetPasswordBtn]
         
+        //Add SubView
         self.superview.addSubview(container)
         container.addSubview(stackView)
         
@@ -134,6 +80,7 @@ class ChangePasswordLayout: BaseLayout{
         setupConstraints()
     }
     
+    ///This function set constraints for components in the layout view
     func setupConstraints(){
         
         container.snp.makeConstraints { (make) in
@@ -149,6 +96,6 @@ class ChangePasswordLayout: BaseLayout{
         }
         
     }
-
-
+    
+    
 }

@@ -8,73 +8,71 @@
 
 //MARK: - Import Frameworks
 import UIKit
-import SnapKit
-import GoogleSignIn
-import FBSDKLoginKit
-import LinkedinSwift
 import InstagramLogin
-import TwitterKit
 import Material
 
-///Sign In view controller
+///This viewController is the main screen for the app that handle user login with normal account or social account
 class LoginVC: UIViewController{
     
-    //MARK: Properties
-    
+    // MARK: Properties
     var layout: LoginLayout!
-    var presenter: SocialAuthPresenter!
+    var presenter: LoginPresenter!
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Setting Layout
-        //layout = SocialAuthLayout(superview: self.view, socialAuthDelegate: self )
+        //Initializing Layout object
+        Colors.setPalete(palete: .main)
         layout = LoginLayout(superview: self.view)
         layout.setupView()
         
-        //Setting Presenter
-        presenter = SocialAuthPresenter()
+        //Initialize Presenter object
+        presenter = LoginPresenter()
         presenter.setView(view: self)
         
         //Adding login buttons action
         layout.googleLoginBtn.addTarget(self, action: #selector(googleLogin) , for: .touchUpInside)
-        //GIDSignIn.sharedInstance().uiDelegate = self
         layout.facebookLoginBtn.addTarget(self, action: #selector(facebookLogin) , for: .touchUpInside)
         layout.linkedInLoginBtn.addTarget(self, action: #selector(linkedinLogin) , for: .touchUpInside)
         layout.instagramLoginBtn.addTarget(self, action: #selector(instagramLogin), for: .touchUpInside)
         layout.twitterLoginBtn.addTarget(self, action: #selector(twitterLogin), for: .touchUpInside)
         
-        //Adding tapGesture on labeles (forgetPassword - register)
-        var tapGestureRecognizer1 = UITapGestureRecognizer(target: self, action: #selector(self.forgetPasswordTapped))
+        //Adding tapGesture on label (forgetPassword)
+        let tapGestureRecognizer1 = UITapGestureRecognizer(target: self, action: #selector(self.forgetPasswordTapped))
         tapGestureRecognizer1.numberOfTapsRequired = 1
-        layout.forgetPasswordBtn.addGestureRecognizer(tapGestureRecognizer1)
-        layout.forgetPasswordBtn.isUserInteractionEnabled = true
+        layout.forgetPasswordLbl.addGestureRecognizer(tapGestureRecognizer1)
+        layout.forgetPasswordLbl.isUserInteractionEnabled = true
         
-        //Adding tapGesture on labeles (forgetPassword - register)
-        var tapGestureRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(self.changePasswordTapped))
+        //Adding tapGesture on label (register)
+        let tapGestureRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(self.changePasswordTapped))
         tapGestureRecognizer2.numberOfTapsRequired = 1
-        layout.registerBtn.addGestureRecognizer(tapGestureRecognizer2)
-        layout.registerBtn.isUserInteractionEnabled = true
-        
-        //layout.identityTF.delegate = self
+        layout.registerLbl.addGestureRecognizer(tapGestureRecognizer2)
+        layout.registerLbl.isUserInteractionEnabled = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        //Customize Navigatinbar
+        //Hide Navbar
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
-
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        //Show Navbar
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
 }
 
+// MARK: Navigation Methods
 extension LoginVC{
     
+    ///This function is the selector for forgetPasswordLbl tabGesture, it handles navigation to ForgetPasswordVC
     @objc func forgetPasswordTapped(){
         let vc = ForgetPasswordVC()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    ///This function is the selector for changePasswordLbl tabGesture, it handles navigation to ChangePasswordVC
     @objc func changePasswordTapped(){
         let vc = ChangePasswordVC()
         self.navigationController?.pushViewController(vc, animated: true)
@@ -82,13 +80,12 @@ extension LoginVC{
 }
 
 
-//Social Login Buttons
+// MARK: Social Login Buttons Methods
 extension LoginVC{
     
     @objc func googleLogin() {
         print("Google signIn Pressed")
         presenter.gLogin()
-        
     }
     
     @objc func facebookLogin() {
@@ -113,7 +110,8 @@ extension LoginVC{
     
 }
 
-extension LoginVC: SocialAuthView{
+// MARK: - Conforming to SocialAuthView Methods
+extension LoginVC: LoginView{
     func presentInsta(instagramLogin: InstagramLoginViewController) {
         present(instagramLogin, animated: true, completion: nil)
     }
@@ -122,17 +120,11 @@ extension LoginVC: SocialAuthView{
         print("User Token : ", token)
     }
 }
-/*
-extension SocialAuthVC: SocialAuthDelegate{
-    
-}
-*/
 
 // MARK: - Conforming to TextFieldDelegte Methods
 extension ForgetPasswordResetVC: TextFieldDelegate {
     public func textFieldDidEndEditing(_ textField: UITextField) {
         (textField as? ErrorTextField)?.isErrorRevealed = false
-        print("Start")
     }
     
     public func textFieldShouldClear(_ textField: UITextField) -> Bool {

@@ -6,22 +6,24 @@
 //  Copyright © 2018 Hesham. All rights reserved.
 //
 
-import Foundation
+//Import FrameWorks
 import UIKit
+import Material
 
+///This class customize all layouts in the app
 public class BaseLayout {
     
+    // MARK: - Properties
+    
+    ///This view act as the SuperView of the BaseLayout
     var superview: UIView!
     
+    //MARK: - Initialization
+    
+    ///Initialize the layout superview with a view passed from viewController
     init(superview: UIView) {
         self.superview = superview
         self.superview.backgroundColor = .white
-    }
-    
-    func append(elements: [Any], to stackView: UIStackView){
-        for element in elements{
-            stackView.addArrangedSubview(element as! UIView)
-        }
     }
 }
 

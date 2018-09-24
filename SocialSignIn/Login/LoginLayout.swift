@@ -6,20 +6,21 @@
 //  Copyright © 2018 Hesham. All rights reserved.
 //
 
+//Import Frameworks
 import UIKit
 import SnapKit
 import Material
 import Localize_Swift
 
+/// This class set the layout for LoginVC
 class LoginLayout: BaseLayout {
     
     //MARK: Properties
-    // var socialAuthDelegate: SocialAuthDelegate!
     
     ///This is the main container that have all sub containers
     lazy var container: UIView = {
         let v = UIView()
-        v.backgroundColor = MainColors.BackGroud
+        v.backgroundColor = Colors.BackGroud
         return v
     }()
     
@@ -29,7 +30,7 @@ class LoginLayout: BaseLayout {
         return v
     }()
     
-    ///This is the middle container that have textFields, Buttons
+    ///This is the middle container that have middleStackView
     lazy var middleContainer: UIView = {
         let v = UIView()
         return v
@@ -41,40 +42,50 @@ class LoginLayout: BaseLayout {
         return v
     }()
     
-    //App Logo imageView
+    ///App Logo imageView
     lazy var logoIV: UIImageView = {
         var iv = UIImageView(image: #imageLiteral(resourceName: "Logo"))
         iv.contentMode = .scaleAspectFit
         return iv
     }()
     
-    
-    //Labels
+    ///App Title Label
     lazy var appTitleLbl: UILabel = {
         let label = UILabel()
         label.text = "LOREM IPSUM"
-        label.textColor = MainColors.text //UIColor.white
+        label.textColor = Colors.text //UIColor.white
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 18)
         return label
     }()
     
+    ///Social Login Label "or login with"
     lazy var socialLoginLbl: UILabel = {
         let lbl = UILabel()
         lbl.text = "social_login".localized()
-        lbl.textColor = MainColors.text // .white
-        lbl.backgroundColor = MainColors.BackGroud
+        lbl.textColor = Colors.text // .white
+        lbl.backgroundColor = Colors.BackGroud
         lbl.font = lbl.font.withSize(14)
         lbl.textAlignment = .center
         return lbl
     }()
     
-    lazy var forgetPasswordBtn: UILabel = {
+    ///Container that have forgetPasswordLbl
+    lazy var forgetPasswordLblContainer: UIView = {
+        return UIView()
+    }()
+    
+    ///Container that have registerLbl
+    lazy var registerLblContainer: UIView = {
+        return UIView()
+    }()
+    
+    ///Forget Password Label "Forget Password?"
+    lazy var forgetPasswordLbl: UILabel = {
         let lbl = UILabel()
         lbl.text = "forget_password".localized()
-        lbl.textColor = MainColors.text // .white
+        lbl.textColor = Colors.text // .white
         lbl.font = lbl.font.withSize(12)
-        
         let preferredLanguage = NSLocale.preferredLanguages[0]
         if preferredLanguage.starts(with: "ar"){
             lbl.textAlignment = .left
@@ -84,9 +95,10 @@ class LoginLayout: BaseLayout {
         return lbl
     }()
     
-    lazy var registerBtn: UILabel = {
+    ///Register Label "You don't have account? Register now"
+    lazy var registerLbl: UILabel = {
         let lbl = UILabel()
-        lbl.textColor =  MainColors.text //UIColor.white
+        lbl.textColor =  Colors.text //UIColor.white
         lbl.text = "register".localized()
         lbl.font = lbl.font.withSize(12)
         lbl.textAlignment = .center
@@ -94,66 +106,25 @@ class LoginLayout: BaseLayout {
     }()
     
     
-    //Text Fields
-    lazy var identityTF: ErrorTextField = {
-        let textField = ErrorTextField()
+    ///Identity TextField "Enter Email, User Name or phone"
+    lazy var identityTF: CustomTextField = {
         
-        textField.textColor = MainColors.text//.white
-        textField.textAlignment = .natural
+        let textField = CustomTextField(placeholder: "identity".localized())
         
-        //Setting placeholder text and colors
-        textField.placeholder = "identity".localized()
-        textField.placeholderNormalColor = MainColors.Placeholder //.white
-        textField.placeholderActiveColor = MainColors.Placeholder //.white
-        textField.placeholderAnimation = .hidden
-        
-        //Setting Divider colors
-        textField.dividerActiveColor = MainColors.divider //.white
-        
-        // Setting the visibilityIconButton color.
-        textField.clearButtonMode = .whileEditing
-        
-        //Setting focus on this  textField
+        //Setting focus on this textField
         textField.resignFirstResponder()
         
         return textField
     }()
     
-    lazy var passwordTF: TextField = {
-        let passwordField = TextField()
-        
-         passwordField.textColor = MainColors.text //.white
-        passwordField.textAlignment = .natural
-        
-        //Setting placeholder text and colors
-        passwordField.placeholder = "password".localized()
-        passwordField.placeholderNormalColor = MainColors.Placeholder //Color.white
-        passwordField.placeholderActiveColor = MainColors.Placeholder //.white
-        passwordField.placeholderAnimation = .hidden
-        
-        //Setting Divider colors
-        passwordField.dividerActiveColor = MainColors.divider //.white
-        
-        // Setting the visibilityIconButton color.
-        passwordField.isVisibilityIconButtonEnabled = true
-        passwordField.clearButtonMode = .whileEditing
-        passwordField.visibilityIconButton?.tintColor = MainColors.divider //.white
-        
-        //Setting focus on this  textField
-        passwordField.resignFirstResponder()
-        
-        return passwordField
+    ///password TextField "password"
+    lazy var passwordTF: CustomPasswordTF = {
+        return CustomPasswordTF(placeholder: "password".localized())
     }()
     
-    
-    
-    //Buttons
-    lazy var loginBtn: RaisedButton = {
-        let button = RaisedButton(title: "login".localized(), titleColor: MainColors.ButtonTitle)
-        button.backgroundColor = MainColors.ButtonBackground //.white
-        button.pulseColor = MainColors.ButtonTitle
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        button.layer.cornerRadius = 5
+    ///Login Button
+    lazy var loginBtn: CustomButton = {
+        let button = CustomButton(title: "login".localized())
         return button
     }()
     
@@ -179,6 +150,7 @@ class LoginLayout: BaseLayout {
         return SocialButton(buttonImage: #imageLiteral(resourceName: "twitter"))
     }()
     
+    ///This stackView contains social buttons objects
     lazy var socialButtonsStackView: UIStackView = {
         let s = UIStackView(frame: (superview?.bounds)!)
         s.axis = .horizontal
@@ -189,6 +161,7 @@ class LoginLayout: BaseLayout {
         return s 
     }()
     
+    ///This stackView contains idetityTF, passwordTF, forgetPasswordLbl, registerLbl, LoginBtn
     lazy var middleStackView: UIStackView = {
         let s = UIStackView(frame: (superview?.bounds)!)
         s.axis = .vertical
@@ -200,10 +173,10 @@ class LoginLayout: BaseLayout {
     }()
     
     
-    //Dividers Views
+    ///Divider View for socialLoginLbl ------ or login with ------
     lazy var socialDivider: UIView = {
         let v = UIView()
-        v.backgroundColor = MainColors.divider //UIColor.white
+        v.backgroundColor = Colors.divider //UIColor.white
         return v
     }()
     
@@ -211,13 +184,6 @@ class LoginLayout: BaseLayout {
     var middleElements: [Any] = []
     
     //MARK: View Initialization
-    /*
-     init(superview: UIView, socialAuthDelegate: SocialAuthDelegate) {
-     super.init(superview: superview)
-     self.socialAuthDelegate = socialAuthDelegate
-     }
-     */
-    
     override init(superview: UIView) {
         super.init(superview: superview)
         
@@ -230,8 +196,8 @@ class LoginLayout: BaseLayout {
     
     ///This function add view components to the superview and then call setupConstraints()
     func setupView(){
- 
-        self.superview.backgroundColor = MainColors.BackGroud
+        
+        self.superview.backgroundColor = Colors.BackGroud
         
         //Adding containers to the main container
         self.superview.addSubview(container)
@@ -240,16 +206,17 @@ class LoginLayout: BaseLayout {
         container.addSubview(bottomContainer)
         
         //1.setup Top Container
-        
         topContainer.addSubview(logoIV)
         topContainer.addSubview(appTitleLbl)
         
         //2.setup Middle Container
-        middleElements = [identityTF, passwordTF, forgetPasswordBtn, loginBtn, registerBtn]
+        middleElements = [identityTF, passwordTF, forgetPasswordLblContainer, loginBtn, registerLblContainer]
         for element in middleElements{
             middleStackView.addArrangedSubview(element as! UIView)
         }
         middleContainer.addSubview(middleStackView)
+        forgetPasswordLblContainer.addSubview(forgetPasswordLbl)
+        registerLblContainer.addSubview(registerLbl)
         
         //3.Setup Bottom Container
         bottomContainer.addSubview(socialDivider)
@@ -267,10 +234,10 @@ class LoginLayout: BaseLayout {
         
         let screenWidth = UIScreen.main.bounds.width
         let screenHeight = UIScreen.main.bounds.height
-  
+        
         container.snp.makeConstraints { (make) in
-           make.leading.equalToSuperview().offset(20)
-           make.trailing.equalToSuperview().offset(-20)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
             make.top.bottom.equalToSuperview()
         }
         
@@ -312,13 +279,10 @@ class LoginLayout: BaseLayout {
             make.height.equalTo(buttonWidth)
             make.width.equalTo(stackWidth)
             make.centerX.equalToSuperview()
-            //make.bottom.equalTo(bottomContainer.snp.bottom).offset(-40)
             make.centerY.equalTo(bottomContainer)
         }
         
         socialLoginLbl.snp.makeConstraints { (make) in
-            //make.leading.equalTo(bottomContainer).offset(70)
-            //make.trailing.equalTo(bottomContainer).offset(-70)
             make.width.equalTo(150)
             make.top.equalTo(bottomContainer.snp.top)
             make.bottom.equalTo(socialButtonsStackView.snp.top)
@@ -343,5 +307,17 @@ class LoginLayout: BaseLayout {
             make.edges.equalTo(middleContainer)
         }
         
+        forgetPasswordLbl.snp.makeConstraints { (make) in
+            make.trailing.top.bottom.equalTo(forgetPasswordLblContainer)
+            make.width.equalTo(110)
+        }
+        
+        registerLbl.snp.makeConstraints { (make) in
+            make.top.bottom.equalTo(registerLblContainer)
+            make.width.equalTo(250)
+            make.centerX.equalTo(registerLblContainer)
+        }
+        
     }
+    
 }

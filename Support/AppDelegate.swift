@@ -11,6 +11,8 @@ import GoogleSignIn
 import FBSDKCoreKit
 import TwitterKit
 import LinkedinSwift
+import Localize_Swift
+import Material
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -55,15 +57,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = nav
         self.window?.makeKeyAndVisible()
         
+        //set palete
+        Colors.setPalete(palete: .second)
+        
         //Setup Navigationbar
         var navigationBarAppearace = UINavigationBar.appearance()
-        navigationBarAppearace.tintColor = SecondColors.backBtn
-        // #colorLiteral(red: 0.000113729955, green: 0.5750550628, blue: 0.7006892562, alpha: 1)
-        /*
-        let BarButtonItemAppearance = UIBarButtonItem.appearance()
-        BarButtonItemAppearance.setTitleTextAttributes([kCTForegroundColorAttributeName as NSAttributedStringKey: UIColor.clear], for: .normal)
-        */
+        navigationBarAppearace.tintColor = Colors.backBtn
         UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(-1000, 0), for:UIBarMetrics.default)
+        
+        adjustLanguage()
+        
         return true
     }
 
@@ -89,5 +92,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    
+    func adjustLanguage() {
+        if Localize.currentLanguage() == "ar" {
+            UILabel.appearance().semanticContentAttribute = .forceRightToLeft
+            UITextView.appearance().semanticContentAttribute = .forceRightToLeft
+            UITextField.appearance().semanticContentAttribute = .forceRightToLeft
+            TextField.appearance().semanticContentAttribute = .forceRightToLeft
+            ErrorTextField.appearance().semanticContentAttribute = .forceRightToLeft
+            UIButton.appearance().semanticContentAttribute = .forceRightToLeft
+            UITableViewCell.appearance().semanticContentAttribute = .forceRightToLeft
+            UIView.appearance().semanticContentAttribute = .forceRightToLeft
+            UINavigationBar.appearance().semanticContentAttribute = .forceRightToLeft
+            
+        } else {
+            UILabel.appearance().semanticContentAttribute = .forceLeftToRight
+            UITextView.appearance().semanticContentAttribute = .forceLeftToRight
+            UITextField.appearance().semanticContentAttribute = .forceLeftToRight
+            TextField.appearance().semanticContentAttribute = .forceLeftToRight
+            ErrorTextField.appearance().semanticContentAttribute = .forceLeftToRight
+            UIButton.appearance().semanticContentAttribute = .forceLeftToRight
+            UIView.appearance().semanticContentAttribute = .forceLeftToRight
+            UINavigationBar.appearance().semanticContentAttribute = .forceLeftToRight
+        }
+    }
 
 }

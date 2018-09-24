@@ -22,7 +22,7 @@
 "reset_password" = "RESET PASSWORD";
 
 //Forget Password
-"forget_password" = "Forget Password";
+"forget_password" = "Forget Password?";
 "identity_lbl" = "Enter your email or phone number to reset your password";
 "identity_tf" = "Enter Email or phone Number";
 "confirm" = "CONFIRM";

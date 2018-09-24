@@ -9,6 +9,7 @@
 import UIKit
 import Material
 
+/// This class set the layout for ForgetPasswordVerificationVC
 class ForgetPasswordVerificationLayout: BaseLayout {
     
     // MARK: - Properties
@@ -16,10 +17,11 @@ class ForgetPasswordVerificationLayout: BaseLayout {
     ///This is the main container that have all sub containers
     lazy var container: UIView = {
         let v = UIView()
-        v.backgroundColor = SecondColors.BackGroud //.white
+        v.backgroundColor = Colors.BackGroud //.white
         return v
     }()
     
+    ///This stackView contains verificationCodeLbl, verificationCodeTF, confirmCodeBtn
     lazy var stackView: UIStackView = {
         let s = UIStackView(frame: (superview?.bounds)!)
         s.axis = .vertical
@@ -30,7 +32,7 @@ class ForgetPasswordVerificationLayout: BaseLayout {
         return s
     }()
     
-    //Label
+    ///Verification Code Label (Enter the verification code that you recieved in your email)
     lazy var verificationCodeLbl: UILabel = {
         let lbl = UILabel()
         lbl.text = "verification_lbl".localized()
@@ -38,32 +40,15 @@ class ForgetPasswordVerificationLayout: BaseLayout {
         return lbl
     }()
     
-    //Text Fields
-    
-    lazy var verificationCodeTF: ErrorTextField = {
-        let textField = ErrorTextField()
-        
-        textField.textAlignment = .natural
-        
-        //Setting placeholder text and colors
-        textField.placeholder = "verification_tf".localized()
-        textField.placeholderNormalColor = SecondColors.PlaceholderNormal //Color.lightGray
-        textField.placeholderActiveColor = SecondColors.PlaceholderActive
-        textField.placeholderAnimation = .hidden
-        textField.textAlignment = .center
-        
-        //Setting Divider colors
-        textField.dividerActiveColor = SecondColors.divider
-        
+    ///Verification Code TextField (Enter the verification code that you recieved in your email)
+    lazy var verificationCodeTF: CustomTextField = {
+        let textField = CustomTextField(placeholder: "verification_tf".localized())
         return textField
     }()
     
-    lazy var ConfirmCodeBtn: RaisedButton = {
-        let button = RaisedButton(title: "confirm".localized(), titleColor: SecondColors.ButtonTitle)
-        button.pulseColor = SecondColors.ButtonTitle //.white
-        button.backgroundColor = SecondColors.ButtonBackground
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        button.layer.cornerRadius = 5
+    /// Confirm Code Button that call confirmCode() in ForgetPasswordVerificationVC
+    lazy var ConfirmCodeBtn: CustomButton = {
+        let button = CustomButton(title: "confirm".localized())
         return button
     }()
     
@@ -77,6 +62,8 @@ class ForgetPasswordVerificationLayout: BaseLayout {
     }
     
     // MARK: - Methods
+    
+    ///This function add view components to the superview and then call setupConstraints()
     func setupView(){
         
         stackElements = [verificationCodeLbl, verificationCodeTF, ConfirmCodeBtn]
@@ -91,6 +78,7 @@ class ForgetPasswordVerificationLayout: BaseLayout {
         setupConstraints()
     }
     
+    ///This function set constraints for components in the layout view
     func setupConstraints(){
         
         container.snp.makeConstraints { (make) in

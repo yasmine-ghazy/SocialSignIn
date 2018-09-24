@@ -9,17 +9,19 @@
 import UIKit
 import Material
 
+/// This class set the layout for ForgetPasswordResetVC
 class ForgetPasswordResetLayout: BaseLayout {
-
+    
     // MARK: - Properties
     
     ///This is the main container that have all sub containers
     lazy var container: UIView = {
         let v = UIView()
-        v.backgroundColor = SecondColors.BackGroud
+        v.backgroundColor = Colors.BackGroud
         return v
     }()
     
+    ///This stackView contains PasswordTF, confirmPasswordTF, resetPasswordBtn
     lazy var stackView: UIStackView = {
         let s = UIStackView(frame: (superview?.bounds)!)
         s.axis = .vertical
@@ -30,24 +32,9 @@ class ForgetPasswordResetLayout: BaseLayout {
         return s
     }()
     
-    //Text Fields
-    lazy var passwordTF: TextField = {
-        let passwordField = TextField()
-        
-        passwordField.textAlignment = .natural
-        //Setting placeholder text and colors
-        passwordField.placeholder = "new_password".localized()
-        passwordField.placeholderNormalColor = SecondColors.PlaceholderNormal//Color.lightGray
-        passwordField.placeholderActiveColor = SecondColors.PlaceholderActive
-        passwordField.placeholderAnimation = .hidden
-        
-        //Setting Divider colors
-        passwordField.dividerActiveColor = SecondColors.divider
-        
-        // Setting the visibilityIconButton color.
-        passwordField.isVisibilityIconButtonEnabled = true
-        passwordField.clearButtonMode = .whileEditing
-        passwordField.visibilityIconButton?.tintColor = SecondColors.divider //.lightGray
+    ///Password TextField ("Enter New Password")
+    lazy var passwordTF: CustomPasswordTF = {
+        let passwordField = CustomPasswordTF(placeholder: "new_password".localized())
         
         //Setting focus on this  textField
         passwordField.resignFirstResponder()
@@ -55,39 +42,21 @@ class ForgetPasswordResetLayout: BaseLayout {
         return passwordField
     }()
     
-    lazy var confirmPasswordTF: TextField = {
-        let passwordField = TextField()
-        
-        passwordField.textAlignment = .natural
-        //Setting placeholder text and colors
-        passwordField.placeholder = "confirm_password".localized()
-        passwordField.placeholderNormalColor = SecondColors.PlaceholderNormal
-        passwordField.placeholderActiveColor = SecondColors.PlaceholderActive
-        passwordField.placeholderAnimation = .hidden
-
-        //Setting Divider colors
-        passwordField.dividerActiveColor = SecondColors.divider
-        
-        // Setting the visibilityIconButton color.
-        passwordField.isVisibilityIconButtonEnabled = true
-        passwordField.clearButtonMode = .whileEditing
-        passwordField.visibilityIconButton?.tintColor = SecondColors.divider //.lightGray
-        
+    ///Password TextField ("Confirm New Password")
+    lazy var confirmPasswordTF: CustomPasswordTF = {
+        let passwordField = CustomPasswordTF(placeholder: "confirm_password".localized())
         return passwordField
     }()
     
-    lazy var resetPasswordBtn: RaisedButton = {
-        let button = RaisedButton(title: "reset_password".localized(), titleColor: SecondColors.ButtonTitle)
-        button.pulseColor = SecondColors.ButtonTitle //.white
-        button.backgroundColor = SecondColors.ButtonBackground
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        button.layer.cornerRadius = 5
+    /// Confirm Code Button that call resetPassword() in ForgetPasswordResetVC
+    lazy var resetPasswordBtn: CustomButton = {
+        let button = CustomButton(title: "reset_password".localized())
         return button
     }()
     
     var stackElements: [Any] = []
     
-
+    
     
     // MARK: - Initialization
     override init(superview: UIView) {
@@ -95,13 +64,15 @@ class ForgetPasswordResetLayout: BaseLayout {
     }
     
     // MARK: - Methods
+    
+    ///This function add view components to the superview and then call setupConstraints()
     func setupView(){
         
         stackElements = [passwordTF, confirmPasswordTF, resetPasswordBtn]
         
         self.superview.addSubview(container)
         container.addSubview(stackView)
-
+        
         for elements in stackElements{
             stackView.addArrangedSubview(elements as! UIView)
         }
@@ -109,6 +80,7 @@ class ForgetPasswordResetLayout: BaseLayout {
         setupConstraints()
     }
     
+    ///This function set constraints for components in the layout view
     func setupConstraints(){
         
         container.snp.makeConstraints { (make) in
@@ -125,5 +97,5 @@ class ForgetPasswordResetLayout: BaseLayout {
         }
         
     }
-
+    
 }

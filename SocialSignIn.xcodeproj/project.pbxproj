@@ -16,11 +16,13 @@
 		187B6F09214F9A6B00BD6AC2 /* LoginLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B6F08214F9A6B00BD6AC2 /* LoginLayout.swift */; };
 		187B6F0B214FA1C300BD6AC2 /* BaseLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B6F0A214FA1C300BD6AC2 /* BaseLayout.swift */; };
 		187B6F0D214FA54000BD6AC2 /* SocialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B6F0C214FA54000BD6AC2 /* SocialButton.swift */; };
-		187B6F0F214FA82200BD6AC2 /* SocialAuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B6F0E214FA82200BD6AC2 /* SocialAuthPresenter.swift */; };
+		187B6F0F214FA82200BD6AC2 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B6F0E214FA82200BD6AC2 /* LoginPresenter.swift */; };
+		189E0EE32157A65600FE0237 /* CustomPasswordTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189E0EE22157A65600FE0237 /* CustomPasswordTF.swift */; };
+		189F28C4215918CD00BFEED0 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189F28C3215918CD00BFEED0 /* CustomButton.swift */; };
+		189F28C6215922AC00BFEED0 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189F28C5215922AC00BFEED0 /* CustomTextField.swift */; };
 		18AA913F21523A9400F50D2D /* ForgetPasswordResetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AA913E21523A9400F50D2D /* ForgetPasswordResetVC.swift */; };
 		18AA91432152983400F50D2D /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AA91422152983400F50D2D /* ChangePasswordVC.swift */; };
 		18AA91452152985500F50D2D /* ChangePasswordLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AA91442152985500F50D2D /* ChangePasswordLayout.swift */; };
-		18AA914721529A5F00F50D2D /* TapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AA914621529A5F00F50D2D /* TapGesture.swift */; };
 		18D246E421538586001ACB68 /* ForgetPasswordResetLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D246E321538586001ACB68 /* ForgetPasswordResetLayout.swift */; };
 		18D246E621538626001ACB68 /* ForgetPasswordVerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D246E521538626001ACB68 /* ForgetPasswordVerificationVC.swift */; };
 		18D246E821538654001ACB68 /* ForgetPasswordVerificationLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D246E721538654001ACB68 /* ForgetPasswordVerificationLayout.swift */; };
@@ -44,11 +46,13 @@
 		187B6F08214F9A6B00BD6AC2 /* LoginLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginLayout.swift; sourceTree = "<group>"; };
 		187B6F0A214FA1C300BD6AC2 /* BaseLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLayout.swift; sourceTree = "<group>"; };
 		187B6F0C214FA54000BD6AC2 /* SocialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialButton.swift; sourceTree = "<group>"; };
-		187B6F0E214FA82200BD6AC2 /* SocialAuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAuthPresenter.swift; sourceTree = "<group>"; };
+		187B6F0E214FA82200BD6AC2 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		189E0EE22157A65600FE0237 /* CustomPasswordTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPasswordTF.swift; sourceTree = "<group>"; };
+		189F28C3215918CD00BFEED0 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		189F28C5215922AC00BFEED0 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		18AA913E21523A9400F50D2D /* ForgetPasswordResetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordResetVC.swift; sourceTree = "<group>"; };
 		18AA91422152983400F50D2D /* ChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
 		18AA91442152985500F50D2D /* ChangePasswordLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordLayout.swift; sourceTree = "<group>"; };
-		18AA914621529A5F00F50D2D /* TapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGesture.swift; sourceTree = "<group>"; };
 		18D246E321538586001ACB68 /* ForgetPasswordResetLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPasswordResetLayout.swift; sourceTree = "<group>"; };
 		18D246E521538626001ACB68 /* ForgetPasswordVerificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVerificationVC.swift; sourceTree = "<group>"; };
 		18D246E721538654001ACB68 /* ForgetPasswordVerificationLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVerificationLayout.swift; sourceTree = "<group>"; };
@@ -81,9 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				18D246ED215394E8001ACB68 /* LoginVC.swift */,
-				187B6F0E214FA82200BD6AC2 /* SocialAuthPresenter.swift */,
+				187B6F0E214FA82200BD6AC2 /* LoginPresenter.swift */,
 				187B6F08214F9A6B00BD6AC2 /* LoginLayout.swift */,
-				187B6F0C214FA54000BD6AC2 /* SocialButton.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -120,6 +123,7 @@
 		18181CAC212996AA0077DA69 /* SocialSignIn */ = {
 			isa = PBXGroup;
 			children = (
+				189F28C721592E0100BFEED0 /* Custom Views */,
 				18181CB9212996AC0077DA69 /* Info.plist */,
 				18AA913D215239EE00F50D2D /* Forget Password */,
 				181348AB2150FEEF001A7806 /* Login */,
@@ -131,17 +135,27 @@
 		187B6F07214F99F300BD6AC2 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				187B6F0A214FA1C300BD6AC2 /* BaseLayout.swift */,
 				18573C2921490D0D00BB3436 /* Constants.swift */,
 				18181CB1212996AA0077DA69 /* Main.storyboard */,
 				18181CB4212996AC0077DA69 /* Assets.xcassets */,
 				18181CB6212996AC0077DA69 /* LaunchScreen.storyboard */,
 				1865A5D6213E83E50082E442 /* credentials.plist */,
 				18181CAD212996AA0077DA69 /* AppDelegate.swift */,
-				18AA914621529A5F00F50D2D /* TapGesture.swift */,
-				18D246EF21539D93001ACB68 /* AppColors.swift */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		189F28C721592E0100BFEED0 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				189F28C5215922AC00BFEED0 /* CustomTextField.swift */,
+				189F28C3215918CD00BFEED0 /* CustomButton.swift */,
+				189E0EE22157A65600FE0237 /* CustomPasswordTF.swift */,
+				187B6F0C214FA54000BD6AC2 /* SocialButton.swift */,
+				187B6F0A214FA1C300BD6AC2 /* BaseLayout.swift */,
+				18D246EF21539D93001ACB68 /* AppColors.swift */,
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 		18AA913D215239EE00F50D2D /* Forget Password */ = {
@@ -313,6 +327,7 @@
 				"${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
 				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
+				"${BUILT_PRODUCTS_DIR}/PasswordTextField/PasswordTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftInstagram/SwiftInstagram.framework",
 				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
@@ -333,6 +348,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PasswordTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftInstagram.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
@@ -352,14 +368,16 @@
 			files = (
 				18AA913F21523A9400F50D2D /* ForgetPasswordResetVC.swift in Sources */,
 				18D246EE215394E8001ACB68 /* LoginVC.swift in Sources */,
+				189F28C4215918CD00BFEED0 /* CustomButton.swift in Sources */,
 				18D246E421538586001ACB68 /* ForgetPasswordResetLayout.swift in Sources */,
 				18D246F021539D93001ACB68 /* AppColors.swift in Sources */,
-				187B6F0F214FA82200BD6AC2 /* SocialAuthPresenter.swift in Sources */,
+				189F28C6215922AC00BFEED0 /* CustomTextField.swift in Sources */,
+				189E0EE32157A65600FE0237 /* CustomPasswordTF.swift in Sources */,
+				187B6F0F214FA82200BD6AC2 /* LoginPresenter.swift in Sources */,
 				18AA91432152983400F50D2D /* ChangePasswordVC.swift in Sources */,
 				18AA91452152985500F50D2D /* ChangePasswordLayout.swift in Sources */,
 				18D246E621538626001ACB68 /* ForgetPasswordVerificationVC.swift in Sources */,
 				18181CAE212996AA0077DA69 /* AppDelegate.swift in Sources */,
-				18AA914721529A5F00F50D2D /* TapGesture.swift in Sources */,
 				187B6F09214F9A6B00BD6AC2 /* LoginLayout.swift in Sources */,
 				187B6F0B214FA1C300BD6AC2 /* BaseLayout.swift in Sources */,
 				18573C2A21490D0D00BB3436 /* Constants.swift in Sources */,
@@ -533,7 +551,10 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SocialSignIn/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Code95.SocialSignIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
@@ -559,7 +580,10 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SocialSignIn/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Code95.SocialSignIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;

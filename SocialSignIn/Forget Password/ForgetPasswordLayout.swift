@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import Material
 
+/// This class set the layout for ForgetPasswordVC
 class ForgetPasswordLayout: BaseLayout {
     
     // MARK: - Properties
@@ -16,10 +16,11 @@ class ForgetPasswordLayout: BaseLayout {
     ///This is the main container that have all sub containers
     lazy var container: UIView = {
         let v = UIView()
-        v.backgroundColor = SecondColors.BackGroud //.white
+        v.backgroundColor = Colors.BackGroud //.white
         return v
     }()
     
+    ///This stackView contains resetPasswordLbl, identityTF, resetPasswordBtn
     lazy var stackView: UIStackView = {
         let s = UIStackView(frame: (superview?.bounds)!)
         s.axis = .vertical
@@ -30,7 +31,7 @@ class ForgetPasswordLayout: BaseLayout {
         return s
     }()
     
-    //Label
+    ///Reset Password Label (Enter your email or phone number to reset your password)
     lazy var resetPasswordLbl: UILabel = {
         let lbl = UILabel()
         lbl.text = "identity_lbl".localized()
@@ -39,31 +40,15 @@ class ForgetPasswordLayout: BaseLayout {
         return lbl
     }()
     
-    //Text Fields
-    
-    lazy var identityTF: ErrorTextField = {
-        let textField = ErrorTextField()
-        
-        textField.textAlignment = .natural
-        
-        //Setting placeholder text and colors
-        textField.placeholder = "identity_tf".localized()
-        textField.placeholderNormalColor = SecondColors.PlaceholderNormal //Color.lightGray
-        textField.placeholderActiveColor = SecondColors.PlaceholderActive // main
-        textField.placeholderAnimation = .hidden
-        
-        //Setting Divider colors
-        textField.dividerActiveColor = SecondColors.divider
-        
+    ///Identity Text Field (Enter Email or phone Number)
+    lazy var identityTF: CustomTextField = {
+        let textField = CustomTextField(placeholder: "identity_tf".localized())
         return textField
     }()
     
-    lazy var resetPasswordBtn: RaisedButton = {
-        let button = RaisedButton(title: "confirm".localized(), titleColor: SecondColors.ButtonTitle)
-        button.pulseColor = SecondColors.ButtonTitle//.white
-        button.backgroundColor = SecondColors.ButtonBackground
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        button.layer.cornerRadius = 5
+    ///Reset Password Button that call reserPassword() in ForgetPasswordVC
+    lazy var resetPasswordBtn: CustomButton = {
+        let button = CustomButton(title: "confirm".localized())
         return button
     }()
     
@@ -77,6 +62,8 @@ class ForgetPasswordLayout: BaseLayout {
     }
     
     // MARK: - Methods
+    
+    ///This function add view components to the superview and then call setupConstraints()
     func setupView(){
         
         stackElements = [resetPasswordLbl, identityTF, resetPasswordBtn]
@@ -91,6 +78,7 @@ class ForgetPasswordLayout: BaseLayout {
         setupConstraints()
     }
     
+    ///This function set constraints for components in the layout view
     func setupConstraints(){
         
         container.snp.makeConstraints { (make) in
@@ -102,7 +90,6 @@ class ForgetPasswordLayout: BaseLayout {
             make.top.equalTo(container)
             make.leading.equalTo(container).offset(20)
             make.trailing.equalTo(container).offset(-20)
-            //make.height.equalTo(200)
             make.height.equalTo(stackHeight)
         }
         

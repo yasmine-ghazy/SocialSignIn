@@ -6,40 +6,45 @@
 //  Copyright © 2018 Hesham. All rights reserved.
 //
 
+//import Frameworks
 import Foundation
-
 import GoogleSignIn
 import FBSDKLoginKit
 import LinkedinSwift
 import InstagramLogin
 import TwitterKit
 
-protocol  SocialAuthView : class{
+///This protocol is implemented in LoginVC to enable LoginPresenter make operations for LoginVC
+protocol  LoginView : class{
     func setUserToken(token: String)
     func presentInsta(instagramLogin: InstagramLoginViewController)
 }
 
-class SocialAuthPresenter: NSObject{
+///This class handles the business logic for LoginVC
+class LoginPresenter: NSObject{
     
-    //MARK: Properties
+    // MARK: Properties
     var instaLogin: InstagramLoginViewController!
-    fileprivate weak var socialAuthView: SocialAuthView?
+    fileprivate weak var socialAuthView: LoginView?
     
-    // this initialize the presenter view methods
-    func setView(view: SocialAuthView){
-        self.socialAuthView = view
-    }
-    
+    // MARK: Initialization
     override init(){
         super.init()
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
     }
     
+    ///this method initialize the presenter view methods
+    func setView(view: LoginView){
+        self.socialAuthView = view
+    }
+    
 }
 
-//MARK: - GIDSignInUIDelegate
-extension SocialAuthPresenter : GIDSignInUIDelegate, GIDSignInDelegate{
+//MARK: - Conform GIDSignInUIDelegate Methods
+extension LoginPresenter : GIDSignInUIDelegate, GIDSignInDelegate{
+    
+    ///This function call signIn() in GIDSignIn which perform google signIn process and send userToken of Google LoggedIn user to LoginVC
     func gLogin(){
         print("Google Login")
         GIDSignIn.sharedInstance().signIn()
@@ -82,8 +87,8 @@ extension SocialAuthPresenter : GIDSignInUIDelegate, GIDSignInDelegate{
     }
 }
 
-//MARK: - FBSDKLoginButtonDelegate
-extension SocialAuthPresenter: FBSDKLoginButtonDelegate{
+//MARK: - Conform FBSDKLoginButtonDelegate Methods
+extension LoginPresenter: FBSDKLoginButtonDelegate{
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         if error != nil{
             print(error.localizedDescription)
@@ -139,6 +144,7 @@ extension SocialAuthPresenter: FBSDKLoginButtonDelegate{
         }
     }
     
+    ///This function perform facebook signIn process and send userToken of facebook LoggedIn user to LoginVC
     func fbLogin() {
         let login = FBSDKLoginManager()
         login.logIn(withReadPermissions: ["email"], from: socialAuthView as! UIViewController) { ( result, error) in
@@ -160,9 +166,10 @@ extension SocialAuthPresenter: FBSDKLoginButtonDelegate{
     }
 }
 
-///LinkedIn Authentication
-extension SocialAuthPresenter{
+// MARK: - LinkedIn Authentication
+extension LoginPresenter{
     
+    ///This function perform LinkedIn signIn process and send userToken of LinkedIn LoggedIn user to LoginVC
     @objc func liLoginBtnclicked(){
         let linkedinHelper = LinkedinSwiftHelper(configuration: LinkedinSwiftConfiguration(clientId: "773ed7ltg76dyf", clientSecret: "6PQF5XYK59qPvrJq", state: "DLKDJF45DIWOERCM", permissions: ["r_emailaddress", "r_basicprofile"], redirectUrl: "https://www.linkedin.com/developer/apps/5241843/auth/linkedin/callback"))
         
@@ -192,9 +199,10 @@ extension SocialAuthPresenter{
     
 }
 
-///Instagram Authentication
-extension SocialAuthPresenter {
+// MARK: - Instagram Authentication
+extension LoginPresenter {
     
+    ///This function  perform google signIn process and send userToken of Instagram LoggedIn user to LoginVC
     func loginWithInstagram() {
         
         // 2. Initialize your 'InstagramLoginViewController' and set your 'ViewController' to delegate it
@@ -226,7 +234,7 @@ extension SocialAuthPresenter {
     
 }
 
-extension SocialAuthPresenter: InstagramLoginViewControllerDelegate {
+extension LoginPresenter: InstagramLoginViewControllerDelegate {
     
     func instagramLoginDidFinish(accessToken: String?, error: InstagramError?) {
         
@@ -242,7 +250,9 @@ extension SocialAuthPresenter: InstagramLoginViewControllerDelegate {
 }
 
 ///Twitter Authentication
-extension SocialAuthPresenter{
+extension LoginPresenter{
+    
+    ///This function perform twitter signIn process and send userToken of twitter LoggedIn user to LoginVC
     func twtrLogin(){
         TWTRTwitter.sharedInstance().logIn {
             (session, error) -> Void in
