@@ -145,6 +145,33 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
+		189D5876216232910006D638 /* Forget Password 1 */ = {
+			isa = PBXGroup;
+			children = (
+				18D246E9215386D3001ACB68 /* ForgetPasswordVC.swift */,
+				18D246EB215386EC001ACB68 /* ForgetPasswordLayout.swift */,
+			);
+			path = "Forget Password 1";
+			sourceTree = "<group>";
+		};
+		189D5878216232AD0006D638 /* Forget Password 2 */ = {
+			isa = PBXGroup;
+			children = (
+				18D246E521538626001ACB68 /* ForgetPasswordVerificationVC.swift */,
+				18D246E721538654001ACB68 /* ForgetPasswordVerificationLayout.swift */,
+			);
+			path = "Forget Password 2";
+			sourceTree = "<group>";
+		};
+		189D5879216232BB0006D638 /* Forget Password 3 */ = {
+			isa = PBXGroup;
+			children = (
+				18AA913E21523A9400F50D2D /* ForgetPasswordResetVC.swift */,
+				18D246E321538586001ACB68 /* ForgetPasswordResetLayout.swift */,
+			);
+			path = "Forget Password 3";
+			sourceTree = "<group>";
+		};
 		189F28C721592E0100BFEED0 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,12 +188,9 @@
 		18AA913D215239EE00F50D2D /* Forget Password */ = {
 			isa = PBXGroup;
 			children = (
-				18AA913E21523A9400F50D2D /* ForgetPasswordResetVC.swift */,
-				18D246E321538586001ACB68 /* ForgetPasswordResetLayout.swift */,
-				18D246E521538626001ACB68 /* ForgetPasswordVerificationVC.swift */,
-				18D246E721538654001ACB68 /* ForgetPasswordVerificationLayout.swift */,
-				18D246E9215386D3001ACB68 /* ForgetPasswordVC.swift */,
-				18D246EB215386EC001ACB68 /* ForgetPasswordLayout.swift */,
+				189D5879216232BB0006D638 /* Forget Password 3 */,
+				189D5878216232AD0006D638 /* Forget Password 2 */,
+				189D5876216232910006D638 /* Forget Password 1 */,
 			);
 			path = "Forget Password";
 			sourceTree = "<group>";
@@ -227,7 +251,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
-				ORGANIZATIONNAME = Hesham;
+				ORGANIZATIONNAME = "Yasmine Ghazy";
 				TargetAttributes = {
 					18181CA9212996AA0077DA69 = {
 						CreatedOnToolsVersion = 9.4.1;

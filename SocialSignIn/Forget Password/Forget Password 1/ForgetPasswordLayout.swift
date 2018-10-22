@@ -2,26 +2,25 @@
 //  ForgetPasswordLayout.swift
 //  SocialSignIn
 //
-//  Created by apple on 9/19/18.
-//  Copyright © 2018 Hesham. All rights reserved.
+//  Created by apple on 9/20/18.
+//  Copyright © 2018 Yasmine Ghazy. All rights reserved.
 //
 
 import UIKit
-import Material
 
-/// This class set the layout for ForgetPasswordResetVC
-class ForgetPasswordResetLayout: BaseLayout {
+/// This class set the layout for ForgetPasswordVC
+class ForgetPasswordLayout: BaseLayout {
     
     // MARK: - Properties
     
     ///This is the main container that have all sub containers
     lazy var container: UIView = {
         let v = UIView()
-        v.backgroundColor = Colors.BackGroud
+        v.backgroundColor = Colors.BackGroud //.white
         return v
     }()
     
-    ///This stackView contains PasswordTF, confirmPasswordTF, resetPasswordBtn
+    ///This stackView contains resetPasswordLbl, identityTF, resetPasswordBtn
     lazy var stackView: UIStackView = {
         let s = UIStackView(frame: (superview?.bounds)!)
         s.axis = .vertical
@@ -32,25 +31,24 @@ class ForgetPasswordResetLayout: BaseLayout {
         return s
     }()
     
-    ///Password TextField ("Enter New Password")
-    lazy var passwordTF: CustomPasswordTF = {
-        let passwordField = CustomPasswordTF(placeholder: "new_password".localized())
-        
-        //Setting focus on this  textField
-        passwordField.resignFirstResponder()
-        
-        return passwordField
+    ///Reset Password Label (Enter your email or phone number to reset your password)
+    lazy var resetPasswordLbl: UILabel = {
+        let lbl = UILabel()
+        lbl.text = "identity_lbl".localized()
+        lbl.textAlignment = .natural
+        lbl.numberOfLines = 2
+        return lbl
     }()
     
-    ///Password TextField ("Confirm New Password")
-    lazy var confirmPasswordTF: CustomPasswordTF = {
-        let passwordField = CustomPasswordTF(placeholder: "confirm_password".localized())
-        return passwordField
+    ///Identity Text Field (Enter Email or phone Number)
+    lazy var identityTF: CustomTextField = {
+        let textField = CustomTextField(placeholder: "identity_tf".localized())
+        return textField
     }()
     
-    /// Confirm Code Button that call resetPassword() in ForgetPasswordResetVC
+    ///Reset Password Button that call reserPassword() in ForgetPasswordVC
     lazy var resetPasswordBtn: CustomButton = {
-        let button = CustomButton(title: "reset_password".localized())
+        let button = CustomButton(title: "confirm".localized())
         return button
     }()
     
@@ -68,7 +66,7 @@ class ForgetPasswordResetLayout: BaseLayout {
     ///This function add view components to the superview and then call setupConstraints()
     func setupView(){
         
-        stackElements = [passwordTF, confirmPasswordTF, resetPasswordBtn]
+        stackElements = [resetPasswordLbl, identityTF, resetPasswordBtn]
         
         self.superview.addSubview(container)
         container.addSubview(stackView)
@@ -92,10 +90,10 @@ class ForgetPasswordResetLayout: BaseLayout {
             make.top.equalTo(container)
             make.leading.equalTo(container).offset(20)
             make.trailing.equalTo(container).offset(-20)
-            //make.height.equalTo(200)
             make.height.equalTo(stackHeight)
         }
         
     }
     
 }
+

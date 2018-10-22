@@ -1,27 +1,27 @@
 //
-//  ForgetPasswordVerificationLayout.swift
+//  ForgetPasswordLayout.swift
 //  SocialSignIn
 //
-//  Created by apple on 9/20/18.
-//  Copyright © 2018 Hesham. All rights reserved.
+//  Created by apple on 9/19/18.
+//  Copyright © 2018 Yasmine Ghazy. All rights reserved.
 //
 
 import UIKit
 import Material
 
-/// This class set the layout for ForgetPasswordVerificationVC
-class ForgetPasswordVerificationLayout: BaseLayout {
+/// This class set the layout for ForgetPasswordResetVC
+class ForgetPasswordResetLayout: BaseLayout {
     
     // MARK: - Properties
     
     ///This is the main container that have all sub containers
     lazy var container: UIView = {
         let v = UIView()
-        v.backgroundColor = Colors.BackGroud //.white
+        v.backgroundColor = Colors.BackGroud
         return v
     }()
     
-    ///This stackView contains verificationCodeLbl, verificationCodeTF, confirmCodeBtn
+    ///This stackView contains PasswordTF, confirmPasswordTF, resetPasswordBtn
     lazy var stackView: UIStackView = {
         let s = UIStackView(frame: (superview?.bounds)!)
         s.axis = .vertical
@@ -32,23 +32,25 @@ class ForgetPasswordVerificationLayout: BaseLayout {
         return s
     }()
     
-    ///Verification Code Label (Enter the verification code that you recieved in your email)
-    lazy var verificationCodeLbl: UILabel = {
-        let lbl = UILabel()
-        lbl.text = "verification_lbl".localized()
-        lbl.numberOfLines = 2
-        return lbl
+    ///Password TextField ("Enter New Password")
+    lazy var passwordTF: CustomPasswordTF = {
+        let passwordField = CustomPasswordTF(placeholder: "new_password".localized())
+        
+        //Setting focus on this  textField
+        passwordField.resignFirstResponder()
+        
+        return passwordField
     }()
     
-    ///Verification Code TextField (Enter the verification code that you recieved in your email)
-    lazy var verificationCodeTF: CustomTextField = {
-        let textField = CustomTextField(placeholder: "verification_tf".localized())
-        return textField
+    ///Password TextField ("Confirm New Password")
+    lazy var confirmPasswordTF: CustomPasswordTF = {
+        let passwordField = CustomPasswordTF(placeholder: "confirm_password".localized())
+        return passwordField
     }()
     
-    /// Confirm Code Button that call confirmCode() in ForgetPasswordVerificationVC
-    lazy var ConfirmCodeBtn: CustomButton = {
-        let button = CustomButton(title: "confirm".localized())
+    /// Confirm Code Button that call resetPassword() in ForgetPasswordResetVC
+    lazy var resetPasswordBtn: CustomButton = {
+        let button = CustomButton(title: "reset_password".localized())
         return button
     }()
     
@@ -66,7 +68,7 @@ class ForgetPasswordVerificationLayout: BaseLayout {
     ///This function add view components to the superview and then call setupConstraints()
     func setupView(){
         
-        stackElements = [verificationCodeLbl, verificationCodeTF, ConfirmCodeBtn]
+        stackElements = [passwordTF, confirmPasswordTF, resetPasswordBtn]
         
         self.superview.addSubview(container)
         container.addSubview(stackView)
@@ -85,7 +87,6 @@ class ForgetPasswordVerificationLayout: BaseLayout {
             make.leading.trailing.bottom.equalToSuperview()
             make.top.equalToSuperview().offset(100)
         }
-        
         let stackHeight = UIScreen.main.bounds.height / 3
         stackView.snp.makeConstraints { (make) in
             make.top.equalTo(container)
@@ -98,15 +99,3 @@ class ForgetPasswordVerificationLayout: BaseLayout {
     }
     
 }
-
-/*
- MainBackGroudColor
- SecodBackGroundColor
- MainPlaceholderColor
- SecondPlaceholderColor
- MainButtonBackgroundColor
- SecondButtonBackgroundColor
- textColor
- 
- */
-

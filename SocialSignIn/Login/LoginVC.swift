@@ -3,7 +3,7 @@
 //  SocialSignIn
 //
 //  Created by apple on 8/19/18.
-//  Copyright © 2018 Hesham. All rights reserved.
+//  Copyright © 2018 Yasmine Ghazy. All rights reserved.
 //
 
 //MARK: - Import Frameworks

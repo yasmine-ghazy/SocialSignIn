@@ -1,15 +1,16 @@
 //
-//  ForgetPasswordLayout.swift
+//  ForgetPasswordVerificationLayout.swift
 //  SocialSignIn
 //
 //  Created by apple on 9/20/18.
-//  Copyright © 2018 Hesham. All rights reserved.
+//  Copyright © 2018 Yasmine Ghazy. All rights reserved.
 //
 
 import UIKit
+import Material
 
-/// This class set the layout for ForgetPasswordVC
-class ForgetPasswordLayout: BaseLayout {
+/// This class set the layout for ForgetPasswordVerificationVC
+class ForgetPasswordVerificationLayout: BaseLayout {
     
     // MARK: - Properties
     
@@ -20,7 +21,7 @@ class ForgetPasswordLayout: BaseLayout {
         return v
     }()
     
-    ///This stackView contains resetPasswordLbl, identityTF, resetPasswordBtn
+    ///This stackView contains verificationCodeLbl, verificationCodeTF, confirmCodeBtn
     lazy var stackView: UIStackView = {
         let s = UIStackView(frame: (superview?.bounds)!)
         s.axis = .vertical
@@ -31,23 +32,22 @@ class ForgetPasswordLayout: BaseLayout {
         return s
     }()
     
-    ///Reset Password Label (Enter your email or phone number to reset your password)
-    lazy var resetPasswordLbl: UILabel = {
+    ///Verification Code Label (Enter the verification code that you recieved in your email)
+    lazy var verificationCodeLbl: UILabel = {
         let lbl = UILabel()
-        lbl.text = "identity_lbl".localized()
-        lbl.textAlignment = .natural
+        lbl.text = "verification_lbl".localized()
         lbl.numberOfLines = 2
         return lbl
     }()
     
-    ///Identity Text Field (Enter Email or phone Number)
-    lazy var identityTF: CustomTextField = {
-        let textField = CustomTextField(placeholder: "identity_tf".localized())
+    ///Verification Code TextField (Enter the verification code that you recieved in your email)
+    lazy var verificationCodeTF: CustomTextField = {
+        let textField = CustomTextField(placeholder: "verification_tf".localized())
         return textField
     }()
     
-    ///Reset Password Button that call reserPassword() in ForgetPasswordVC
-    lazy var resetPasswordBtn: CustomButton = {
+    /// Confirm Code Button that call confirmCode() in ForgetPasswordVerificationVC
+    lazy var ConfirmCodeBtn: CustomButton = {
         let button = CustomButton(title: "confirm".localized())
         return button
     }()
@@ -66,7 +66,7 @@ class ForgetPasswordLayout: BaseLayout {
     ///This function add view components to the superview and then call setupConstraints()
     func setupView(){
         
-        stackElements = [resetPasswordLbl, identityTF, resetPasswordBtn]
+        stackElements = [verificationCodeLbl, verificationCodeTF, ConfirmCodeBtn]
         
         self.superview.addSubview(container)
         container.addSubview(stackView)
@@ -85,15 +85,28 @@ class ForgetPasswordLayout: BaseLayout {
             make.leading.trailing.bottom.equalToSuperview()
             make.top.equalToSuperview().offset(100)
         }
+        
         let stackHeight = UIScreen.main.bounds.height / 3
         stackView.snp.makeConstraints { (make) in
             make.top.equalTo(container)
             make.leading.equalTo(container).offset(20)
             make.trailing.equalTo(container).offset(-20)
+            //make.height.equalTo(200)
             make.height.equalTo(stackHeight)
         }
         
     }
     
 }
+
+/*
+ MainBackGroudColor
+ SecodBackGroundColor
+ MainPlaceholderColor
+ SecondPlaceholderColor
+ MainButtonBackgroundColor
+ SecondButtonBackgroundColor
+ textColor
+ 
+ */
 

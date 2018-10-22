@@ -3,7 +3,7 @@
 //  SocialSignIn
 //
 //  Created by apple on 9/23/18.
-//  Copyright © 2018 Hesham. All rights reserved.
+//  Copyright © 2018 Yasmine Ghazy. All rights reserved.
 //
 
 //Import Frameworks
@@ -17,7 +17,7 @@ class CustomPasswordTF: UIView{
     //MARK: - Properties
     var iconClick = false
     
-    //This is the password TextField
+    ///This is the password TextField
     lazy var passwordTF: TextField = {
         let passwordField = TextField()
         passwordField.textColor = Colors.text
@@ -31,6 +31,9 @@ class CustomPasswordTF: UIView{
         //Setting Divider colors
         passwordField.dividerActiveColor = Colors.divider //.white
         passwordField.isSecureTextEntry = true
+        
+        //Add on focus action
+        passwordField.addTarget(self, action: #selector(passwordFieldDidFocused), for: .allTouchEvents)
         
         return passwordField
     }()
@@ -46,6 +49,7 @@ class CustomPasswordTF: UIView{
         btn.setImage(closeEye, for: .normal)
         btn.tintColor = Colors.divider
         btn.addTarget(self, action: #selector(iconAction), for: .touchUpInside)
+        btn.isHidden = true
         return btn
     }()
     
@@ -109,6 +113,13 @@ class CustomPasswordTF: UIView{
         }
         iconClick = !iconClick
     }
+    
+    @objc func passwordFieldDidFocused(sender: AnyObject){
+        print("focus")
+        eyeBtn.isHidden = false
+    }
+    
+    
 }
 
 extension TextField{
@@ -140,5 +151,9 @@ extension TextField{
     override open func editingRect(forBounds bounds: CGRect) -> CGRect {
         let padding = getPadding()
         return UIEdgeInsetsInsetRect(bounds, padding)
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        print("edit")
     }
 }
